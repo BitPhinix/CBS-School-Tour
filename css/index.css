@@ -1,0 +1,47 @@
+html, body, #hero {
+    height: 100%;
+    min-width: 300px;
+    overflow-x:hidden;
+}
+
+header {
+    height: 100%;
+    min-height: 400px;
+}
+
+#hero {
+    background: url("../img/cbs_building_panorama.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#hero h5{
+    font-size: 90px;
+
+    animation-duration: 1.2s;
+    animation-delay: 1s;
+}
+
+#hero .hr-light{
+    margin-top: -40px;
+
+    animation-delay: 1.8s;
+}
+
+#hero h3{
+    font-size: 30px;
+
+    animation-delay: 2.3s;
+}
+
+#hero button {
+    margin-bottom: -600px;
+    align-self: center;
+    font-size: 15px;
+    padding: 5px 15px;
+
+    animation-delay: 2.7s;
+}
+
