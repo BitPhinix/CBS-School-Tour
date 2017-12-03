@@ -10,15 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/jquery": "^3.2.16",
-    "jquery": "^3.2.1",
-    "mdbootstrap": "^4.4.3"
+    "marzipano": "^0.6.0"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.4.1",
     "source-map-loader": "^0.2.3",
     "typescript": "^2.6.2",
-    "webpack": "^3.9.1",
-    "webpack-dev-server": "^2.9.5"
+    "webpack": "^3.9.1"
   }
 }

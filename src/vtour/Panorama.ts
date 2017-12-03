@@ -1,6 +1,6 @@
-import * as Marzipano from "./marzipano";
+import * as Marzipano from "../../node_modules/marzipano/dist/marzipano.js";
 
-export interface Posititon {
+export interface Position {
     yaw: number,
     pitch: number,
     fov: number
@@ -18,7 +18,7 @@ export class Panorama {
         this.viewer = new Marzipano.Viewer(element, viewerOpts);
     }
 
-    loadScene(id: string | number, initialView: Posititon): any {
+    loadScene(id: string | number, initialView: Position): any {
         const levels = [
             { "tileSize": 256, "size": 256, "fallbackOnly": true},
             { "tileSize": 512, "size": 512},
@@ -28,7 +28,7 @@ export class Panorama {
         ];
 
         const geometry = new Marzipano.CubeGeometry(levels);
-        const source = Marzipano.ImageUrlSource.fromString("tiles/" + id + "/{z}/{f}/{y}/{x}.jpg");
+        const source = Marzipano.ImageUrlSource.fromString("./tiles/" + id + "/{z}/{f}/{y}/{x}.jpg");
         const limiter = Marzipano.RectilinearView.limit.traditional(1024, 120*Math.PI/180);
         const view = new Marzipano.RectilinearView(initialView, limiter);
 
@@ -46,11 +46,11 @@ export class Panorama {
         });
     }
 
-    lookTo(pos: Posititon, transDuration: number) {
+    lookTo(pos: Position, transDuration: number) {
         this.scene.lookTo(pos, {transitionDuration: transDuration});
     }
 
-    pinElement(element: HTMLElement, pos: Posititon) {
+    pinElement(element: HTMLElement, pos: Position) {
         this.scene.hotspotContainer().createHotspot(element, pos);
     }
 }
