@@ -1,7 +1,10 @@
 module.exports = {
-    entry: "./src/index.ts",
+    entry: {
+        vtour : "./src/vtour.ts",
+        index : "./src/index.ts"
+    },
     output: {
-        filename: "bundle.js",
+        filename: "[name].bundle.js",
         path: __dirname + "/dist"
     },
 
