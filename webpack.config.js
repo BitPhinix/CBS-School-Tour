@@ -1,13 +1,12 @@
 module.exports = {
     entry: {
-        vtour : "./src/vtour.ts",
-        index : "./src/index.ts"
+        vtour : "./src/vtour/vtour.ts",
+        index : "./src/index/index.ts"
     },
     output: {
         filename: "[name].bundle.js",
         path: __dirname + "/dist"
     },
-
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
 
