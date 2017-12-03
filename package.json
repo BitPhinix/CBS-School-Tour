@@ -10,7 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "marzipano": "^0.6.0"
+    "@types/jquery": "^3.2.16",
+    "jquery": "^3.2.1",
+    "marzipano": "^0.6.0",
+    "mdbootstrap": "^4.4.3"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.4.1",
