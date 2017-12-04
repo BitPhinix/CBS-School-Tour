@@ -1,4 +1,4 @@
-import {Panorama} from "./Panorama";
+import {Panorama} from "./panorama";
 
 const pano = new Panorama(document.getElementById("pano"));
 pano.loadScene("1", {fov: 0, pitch: 0, yaw: 2});
