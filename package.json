@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "start http://localhost:8080/webpack-dev-server/index.html & webpack-dev-server"
+    "start": "start http://localhost:8080/webpack-dev-server/index.html & webpack-dev-server",
+    "build": "webpack",
+    "autobuild": "webpack -w"
   },
   "author": "",
   "license": "ISC",
