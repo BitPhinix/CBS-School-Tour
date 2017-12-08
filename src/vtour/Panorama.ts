@@ -28,8 +28,8 @@ export class Panorama {
         ];
 
         const geometry = new Marzipano.CubeGeometry(levels);
-        const source = Marzipano.ImageUrlSource.fromString("./tiles/" + id + "/{z}/{f}/{y}/{x}.jpg");
-        const limiter = Marzipano.RectilinearView.limit.traditional(1024, 120*Math.PI/180);
+        const source = Marzipano.ImageUrlSource.fromString(`./tiles/${id}/{z}/{f}/{y}/{x}.jpg`);
+        const limiter = Marzipano.RectilinearView.limit.traditional(100, 120*Math.PI/180);
         const view = new Marzipano.RectilinearView(initialView, limiter);
 
         this.scene = this.viewer.createScene({
