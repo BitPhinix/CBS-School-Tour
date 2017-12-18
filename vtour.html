@@ -2,15 +2,53 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Hello React!</title>
+    <title>CBS Tour</title>
 
+    <!-- Bootstrap core CSS -->
+    <link href="./node_modules/mdbootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap CSS -->
+    <link href="./node_modules/mdbootstrap/css/mdb.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom css -->
     <link rel="stylesheet" href="css/vtour.css">
 </head>
 <body>
-<h5 id="red" onclick="alert('hi')">Test!</h5>
-<div id="pano"></div>
+    <header>
+        <div id="navBar">
+            <div class="card z-depth-2 row" id="searchBar">
+                <input type="text" placeholder="In CBS Mannheim suchen">
+                <div id="buttonContainer">
+                    <i class="fa fa-search" aria-hidden="true" title="Suchen"></i>
+                    <i class="fa fa-location-arrow blue-text" title="Navigation"></i>
+                </div>
+            </div>
+            <ul id="autoCompleteContainer">
+                <li class="autoComplete row">
+                    <i class="fa fa-map-marker"></i>
+                    <p>Raum 210</p>
+                </li>
+                <li class="autoComplete row">
+                    <i class="fa fa-map-marker"></i>
+                    <p>Raum 203</p>
+                </li>
+                <li class="autoComplete row">
+                    <i class="fa fa-map-marker"></i>
+                    <p>Raum 421</p>
+                </li>
+                <li class="autoComplete row">
+                    <i class="fa fa-map-marker"></i>
+                    <p>Raum 322</p>
+                </li>
+            </ul>
+        </div>
+    </header>
 
-<!-- Main -->
-<script src="./dist/vtour.bundle.js"></script>
+    <!-- Main JS -->
+    <script src="./dist/vtour.bundle.js"></script>
+    <!-- Bootstrap core JS -->
+    <script src="./node_modules/mdbootstrap/js/bootstrap.min.js"></script>
+    <!-- Material Design Bootstrap JS -->
+    <script src="./node_modules/mdbootstrap/js/mdb.min.js"></script>
 </body>
 </html>

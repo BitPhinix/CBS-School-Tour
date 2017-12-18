@@ -1,13 +1,88 @@
-#pano {
-    position: fixed;
-    top: 0;
-    left: 0;
+body, html {
+    background-color: dodgerblue;
     width: 100%;
     height: 100%;
-    background-color: black;
+    min-width: 300px;
 }
 
-#red {
-    font-size: 50px;
-    color: red;
+#navBar {
+    margin: 10px;
+    max-width: 400px;
+    width: calc(100% - 20px);
+    background-color: blue;
+}
+
+#searchBar {
+    margin: 0;
+    width: 100%;
+    border-radius: 2px;
+    height: 40px;
+}
+
+#searchBar i {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    padding: 4px 5px;
+    color: gray;
+    width: 40px;
+    -webkit-text-stroke: 2px white;
+    font-size: 30px;
+    float: left;
+}
+
+#searchBar input {
+    box-shadow: none;
+    border: none;
+    height: 100%;
+    padding-left: 10px;
+    width: calc(100% - 95px);
+}
+
+#buttonContainer {
+    float: left;
+    width: 100px;
+}
+
+#autoCompleteContainer {
+    padding: 0;
+    background-color: white;
+    border-radius: 2px;
+    list-style: none;
+}
+
+.autoComplete i {
+    color: gray;
+    display: inline-block;
+    text-align: center;
+    margin: 5px 20px 0 20px;
+    font-size: 25px;
+}
+
+.autoComplete p {
+    display: inline-block;
+    text-align: center;
+    margin: 2px 20px 0 0;
+    font-size: 20px;
+    color: gray;
+    font-weight: 400;
+}
+
+.autoComplete {
+    margin: 0 10px;
+    padding: 0;
+    border-bottom: 1px solid gray;
+}
+
+.autoComplete:hover {
+    background: lightgray;
+}
+
+.autoComplete:first-child {
+    padding-top: 1px;
+}
+
+.autoComplete:last-child {
+    border: none;
+    padding-bottom: 1px;
 }
