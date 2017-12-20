@@ -1,7 +1,10 @@
-import {Panorama} from "./panorama";
 import {navigate} from "./navigator";
 import {NavigationMap} from "./navigator";
+import {SearchProvider} from "./searchProvider";
 
+SearchProvider.registerSearchBox(document.getElementById("searchBox"));
+
+/*
 const map : NavigationMap = {
     "A":{ connectedTo: ["D"], type: null, position: {x: 1, y: 1}},
     "B":{ connectedTo: ["C", "A"], type: null, position: {x: 20, y: 30}},
@@ -10,6 +13,7 @@ const map : NavigationMap = {
 };
 
 console.log(navigate("A", "C", map));
+*/
 
 /*
 const pano = new Panorama(document.getElementById("pano"));
