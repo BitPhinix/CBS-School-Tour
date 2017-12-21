@@ -2,9 +2,13 @@ body, html {
     background-color: dodgerblue;
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
     min-width: 300px;
+    overflow: hidden;
 }
 
+/* Search-Bar */
 #navBar {
     margin: 10px;
     max-width: 400px;
@@ -44,11 +48,16 @@ body, html {
     width: 100px;
 }
 
-#autoCompleteContainer {
+/* AutoComplete Container*/
+
+#autoCompleteContainer, #autoCompleteContainerNav {
     padding: 0;
     background-color: white;
     border-radius: 2px;
     list-style: none;
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 50vh;
 }
 
 .autoComplete i {
@@ -72,6 +81,7 @@ body, html {
     margin: 0 10px;
     padding: 0;
     border-bottom: 1px solid gray;
+    cursor: pointer;
 }
 
 .autoComplete:hover {
@@ -85,4 +95,86 @@ body, html {
 .autoComplete:last-child {
     border: none;
     padding-bottom: 1px;
+}
+
+/* Scrollbar styling - no iExplorer :( */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-button {
+    visibility: collapse;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/* navSlider */
+
+#navSlider {
+    min-width: 300px;
+    max-width: 500px;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#navSlider div {
+    margin: 0;
+    padding: 0;
+}
+
+#navHeader {
+    background-color: #519FF4;
+}
+
+#navHeader input {
+    margin: 10px 0;
+    padding: 0;
+    color: white;
+    border-bottom-color: #B9CCFA;
+    box-shadow: none;
+}
+
+#navHeader input::placeholder {
+    color: #B9CCFA;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+#navBarClose {
+    display: inline-block;
+    text-align: right !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 5px 10px 0 0 !important;
+    height: auto;
+    font-size: 40px !important;
+}
+
+#navHeader i {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    padding: 40px 0;
+    color: gray;
+    width: 100%;
+    font-size: 30px;
+    float: left;
+}
+
+/* Font awesome */
+.fa-rotate-90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
 }

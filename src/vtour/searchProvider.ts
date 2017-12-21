@@ -2,36 +2,55 @@ export class SearchProvider {
     static RoomMax : number = 300;
     static RoomMin : number = 0;
     static SpecialRooms : string[] = ["Sekretariat", "Lehrerzimmer", "Physiklabor"];
-    static autoCompleteContainer = document.getElementById("autoCompleteContainer");
 
-    static registerSearchBox(element : HTMLElement) {
-        element.addEventListener("input", (e: Event) => this.handleSearchBoxChange(<HTMLInputElement> e.target))
+    private static searchBoxes : {inputElement: HTMLElement, container: HTMLElement}[] = [];
+
+    static registerSearchBox(element : HTMLElement, autoCompleteContainer : HTMLElement) {
+        element.addEventListener("input", (e: Event) => this.handleSearchBoxChange(<HTMLInputElement> e.target));
+        element.addEventListener("click", (e: Event) => this.handleSearchBoxChange(<HTMLInputElement> e.target));
+        SearchProvider.searchBoxes.push({inputElement: element, container: autoCompleteContainer});
     }
 
     static handleSearchBoxChange(element: HTMLInputElement) {
-        const result = SearchProvider.autocomplete(element.value);
+        const result = SearchProvider.autoComplete(element.value);
+        const container = SearchProvider.searchBoxes.find(value => value.inputElement === element).container;
+        SearchProvider.searchBoxes.sort((a, b) => a.inputElement === element ? 0 : 1);
 
         let child;
-        while (child = SearchProvider.autoCompleteContainer.firstChild)
-            SearchProvider.autoCompleteContainer.removeChild(child);
-
+        while (child = container.firstChild)
+            container.removeChild(child);
 
         for (let text of result) {
             let li = document.createElement("li");
             let p = document.createElement("p");
             let i = document.createElement("i");
+
             i.setAttribute("class", "fa fa-map-marker");
+            li.setAttribute("class", "autoComplete row");
+            li.addEventListener("click", (e: Event) => this.handleLiClick(<HTMLElement> e.target));
             p.innerText = text;
 
-            li.setAttribute("class", "autoComplete row");
             li.appendChild(i);
             li.appendChild(p);
 
-            SearchProvider.autoCompleteContainer.appendChild(li);
+            container.appendChild(li);
         }
     }
 
-    static autocomplete(text: string) : string[] {
+    static handleLiClick(element: HTMLElement) {
+        let ul = element;
+        while (ul && ul.tagName != "UL")
+            ul = ul.parentElement;
+
+        if(!ul)
+            return;
+
+        const input = <HTMLInputElement> SearchProvider.searchBoxes.find(value => value.container == ul).inputElement;
+        input.value = element.outerText;
+        SearchProvider.handleSearchBoxChange(input);
+    }
+
+    static autoComplete(text: string) : string[] {
         text = text.toLowerCase().trim();
 
         if(text == "")

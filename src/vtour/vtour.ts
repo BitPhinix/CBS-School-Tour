@@ -2,7 +2,10 @@ import {navigate} from "./navigator";
 import {NavigationMap} from "./navigator";
 import {SearchProvider} from "./searchProvider";
 
-SearchProvider.registerSearchBox(document.getElementById("searchBox"));
+//Search-boxes
+SearchProvider.registerSearchBox(document.getElementById("navStart"), document.getElementById("autoCompleteContainerNav"));
+SearchProvider.registerSearchBox(document.getElementById("navDestination"), document.getElementById("autoCompleteContainerNav"));
+SearchProvider.registerSearchBox(document.getElementById("searchBox"), document.getElementById("autoCompleteContainer"));
 
 /*
 const map : NavigationMap = {
