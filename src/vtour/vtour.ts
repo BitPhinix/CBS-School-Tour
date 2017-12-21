@@ -6,6 +6,7 @@ import {SearchProvider} from "./searchProvider";
 SearchProvider.registerSearchBox(document.getElementById("navStart"), document.getElementById("autoCompleteContainerNav"));
 SearchProvider.registerSearchBox(document.getElementById("navDestination"), document.getElementById("autoCompleteContainerNav"));
 SearchProvider.registerSearchBox(document.getElementById("searchBox"), document.getElementById("autoCompleteContainer"));
+SearchProvider.registerSwapButton(document.getElementById("swapButton"), document.getElementById("navDestination"), document.getElementById("navStart"));
 
 /*
 const map : NavigationMap = {

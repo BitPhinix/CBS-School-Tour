@@ -4,6 +4,12 @@ export class SearchProvider {
     static SpecialRooms : string[] = ["Sekretariat", "Lehrerzimmer", "Physiklabor"];
 
     private static searchBoxes : {inputElement: HTMLElement, container: HTMLElement}[] = [];
+    private static swapButtons : {button: HTMLElement, input1: HTMLInputElement, input2: HTMLInputElement}[] = [];
+
+    static registerSwapButton(button: HTMLElement, input1: HTMLElement, input2: HTMLElement) {
+        button.addEventListener("click", (e: Event) => this.handleSwapButtonClick(<HTMLInputElement> e.target) )
+        SearchProvider.swapButtons.push({button: button, input1: <HTMLInputElement> input1, input2: <HTMLInputElement> input2});
+    }
 
     static registerSearchBox(element : HTMLElement, autoCompleteContainer : HTMLElement) {
         element.addEventListener("input", (e: Event) => this.handleSearchBoxChange(<HTMLInputElement> e.target));
@@ -11,14 +17,31 @@ export class SearchProvider {
         SearchProvider.searchBoxes.push({inputElement: element, container: autoCompleteContainer});
     }
 
-    static handleSearchBoxChange(element: HTMLInputElement) {
-        const result = SearchProvider.autoComplete(element.value);
+    private static handleSwapButtonClick (button: HTMLElement){
+        const info = SearchProvider.swapButtons.find(value => value.button === button);
+
+        const text1 = info.input1.value;
+        info.input1.value = info.input2.value;
+        info.input2.value = text1;
+    }
+
+    private static getContainer(element: HTMLInputElement) : HTMLElement {
         const container = SearchProvider.searchBoxes.find(value => value.inputElement === element).container;
         SearchProvider.searchBoxes.sort((a, b) => a.inputElement === element ? 0 : 1);
+        return container;
+    }
 
+    private static clearContainer(container: HTMLElement) {
         let child;
         while (child = container.firstChild)
             container.removeChild(child);
+    }
+
+    static handleSearchBoxChange(element: HTMLInputElement) {
+        const result = SearchProvider.autoComplete(element.value);
+        const container = SearchProvider.getContainer(element);
+
+        SearchProvider.clearContainer(container);
 
         for (let text of result) {
             let li = document.createElement("li");
@@ -47,7 +70,7 @@ export class SearchProvider {
 
         const input = <HTMLInputElement> SearchProvider.searchBoxes.find(value => value.container == ul).inputElement;
         input.value = element.outerText;
-        SearchProvider.handleSearchBoxChange(input);
+        SearchProvider.clearContainer(ul);
     }
 
     static autoComplete(text: string) : string[] {
