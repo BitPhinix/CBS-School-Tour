@@ -1,14 +1,16 @@
-import {navigate} from "./navigator";
+import {Navigator} from "./navigator";
 import {NavigationMap} from "./navigator";
-import {SearchProvider} from "./searchProvider";
+import {AutoComplete} from "./uiElements/autoComplete";
+import {TextBoxSwapper} from "./uiElements/textBoxSwapper";
 
 //Search-boxes
-SearchProvider.registerSearchBox(document.getElementById("navStart"), document.getElementById("autoCompleteContainerNav"));
-SearchProvider.registerSearchBox(document.getElementById("navDestination"), document.getElementById("autoCompleteContainerNav"));
-SearchProvider.registerSearchBox(document.getElementById("searchBox"), document.getElementById("autoCompleteContainer"));
-SearchProvider.registerSwapButton(document.getElementById("swapButton"), document.getElementById("navDestination"), document.getElementById("navStart"));
+new AutoComplete(document.getElementById("autoCompleteContainerNav"), document.getElementById("navStart"), document.getElementById("navDestination"));
+new AutoComplete(document.getElementById("autoCompleteContainer"), document.getElementById("searchBox"));
 
-/*
+//Swap-Buttons
+new TextBoxSwapper(<HTMLInputElement> document.getElementById("navStart"), <HTMLInputElement> document.getElementById("navDestination"), document.getElementById("swapButton"));
+
+// ------------ Test stuff -------------
 const map : NavigationMap = {
     "A":{ connectedTo: ["D"], type: null, position: {x: 1, y: 1}},
     "B":{ connectedTo: ["C", "A"], type: null, position: {x: 20, y: 30}},
@@ -16,8 +18,8 @@ const map : NavigationMap = {
     "D":{ connectedTo: ["A", "C"], type: null, position: {x: 20, y: 1}}
 };
 
-console.log(navigate("A", "C", map));
-*/
+const navigator = new Navigator(map);
+console.log(navigator.navigate("A", "C"));
 
 /*
 const pano = new Panorama(document.getElementById("pano"));
