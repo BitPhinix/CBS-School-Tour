@@ -2,6 +2,7 @@ import {Navigator} from "./navigator";
 import {NavigationMap} from "./navigator";
 import {AutoComplete} from "./uiElements/autoComplete";
 import {TextBoxSwapper} from "./uiElements/textBoxSwapper";
+import {SlideOut} from "./uiElements/slideOut";
 
 //Search-boxes
 new AutoComplete(document.getElementById("autoCompleteContainerNav"), document.getElementById("navStart"), document.getElementById("navDestination"));
@@ -9,6 +10,9 @@ new AutoComplete(document.getElementById("autoCompleteContainer"), document.getE
 
 //Swap-Buttons
 new TextBoxSwapper(<HTMLInputElement> document.getElementById("navStart"), <HTMLInputElement> document.getElementById("navDestination"), document.getElementById("swapButton"));
+
+//Slide-Out
+new SlideOut(document.getElementById("navSlider"), document.getElementById("navBarClose"), document.getElementById("navBarOpen"));
 
 // ------------ Test stuff -------------
 const map : NavigationMap = {

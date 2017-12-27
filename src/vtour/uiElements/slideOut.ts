@@ -1,13 +1,28 @@
 export class SlideOut {
+    opened: boolean = false;
+    slideOut: HTMLElement;
 
-    constructor(sliderOut: HTMLElement, ...toggles: HTMLElement[])
+    constructor(slideOut: HTMLElement, ...toggles: HTMLElement[])
     {
         if(toggles)
             for (let toggle of toggles)
-                toggle.addEventListener("click", ev => this.HandleToggleClick());
+                this.registerToggle(toggle);
+
+        slideOut.style.marginLeft = "-1000px";
+        slideOut.style.transition = "margin 0.2s ease";
+        this.slideOut = slideOut;
     }
 
-    HandleToggleClick() {
+    registerToggle(toggle: HTMLElement) {
+        toggle.addEventListener("click", ev => this.toggle());
+    }
 
+    toggle() {
+        if(this.opened)
+            this.slideOut.style.marginLeft = "-1000px";
+        else
+            this.slideOut.style.marginLeft = "0";
+
+        this.opened = !this.opened;
     }
 }

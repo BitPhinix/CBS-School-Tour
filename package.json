@@ -12,11 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "@types/jquery": "^3.2.16",
-    "@types/slideout": "^0.1.19",
     "jquery": "^3.2.1",
     "marzipano": "^0.6.0",
-    "mdbootstrap": "^4.4.3",
-    "slideout": "^1.0.1"
+    "mdbootstrap": "^4.4.3"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.4.1",
