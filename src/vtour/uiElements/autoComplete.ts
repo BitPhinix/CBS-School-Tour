@@ -57,6 +57,7 @@ export class AutoComplete {
             return;
 
         this.activeSearchBox.value = element.outerText;
+        this.activeSearchBox.dispatchEvent(new Event("input"));
         this.clearContainer();
     }
 

@@ -3,6 +3,7 @@ import {NavigationMap} from "./navigator";
 import {AutoComplete} from "./uiElements/autoComplete";
 import {TextBoxSwapper} from "./uiElements/textBoxSwapper";
 import {SlideOut} from "./uiElements/slideOut";
+import {TextBoxSyncer} from "./uiElements/textBoxSyncer";
 
 //Search-boxes
 new AutoComplete(document.getElementById("autoCompleteContainerNav"), document.getElementById("navStart"), document.getElementById("navDestination"));
@@ -13,6 +14,9 @@ new TextBoxSwapper(<HTMLInputElement> document.getElementById("navStart"), <HTML
 
 //Slide-Out
 new SlideOut(document.getElementById("navSlider"), document.getElementById("navBarClose"), document.getElementById("navBarOpen"));
+
+//TextBox-Syncer
+new TextBoxSyncer(document.getElementById("searchBox"), document.getElementById("navDestination"));
 
 // ------------ Test stuff -------------
 const map : NavigationMap = {
