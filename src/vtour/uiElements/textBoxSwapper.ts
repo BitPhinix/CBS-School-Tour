@@ -18,5 +18,8 @@ export class TextBoxSwapper {
         const temp = this.textBox1.value;
         this.textBox1.value = this.textBox2.value;
         this.textBox2.value = temp;
+
+        this.textBox1.dispatchEvent(new Event("input"));
+        this.textBox2.dispatchEvent(new Event("input"));
     }
 }
