@@ -13,9 +13,10 @@ export class TextBoxSwapper {
     registerSwapButton(button: HTMLElement) {
         button.addEventListener("click", ev => this.swap());
     }
-    
+
     swap() {
         const temp = this.textBox1.value;
+
         this.textBox1.value = this.textBox2.value;
         this.textBox2.value = temp;
 
