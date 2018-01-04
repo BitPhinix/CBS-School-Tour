@@ -18,13 +18,18 @@ export class AutoComplete {
 
     registerSearchBox(element : HTMLElement) {
         element.addEventListener("input", (e: Event) => this.handleSearchBoxChange(<HTMLInputElement> e.target));
-        element.addEventListener("click", (e: Event) => this.handleSearchBoxChange(<HTMLInputElement> e.target));
+        element.addEventListener("click", (e: Event) => this.handleSearchBoxClick(e));
     }
 
     private clearContainer() {
         let child;
         while (child = this.container.firstChild)
             this.container.removeChild(child);
+    }
+
+    handleSearchBoxClick(event: Event) {
+        event.stopPropagation();
+        this.handleSearchBoxChange(<HTMLInputElement> event.target);
     }
 
     handleSearchBoxChange(element: HTMLInputElement) {
@@ -70,7 +75,6 @@ export class AutoComplete {
         if(!this.isInContainer(element))
             return;
 
-        event.stopPropagation();
         this.activeSearchBox.value = element.outerText;
         this.activeSearchBox.dispatchEvent(new Event("input"));
         this.clearContainer();
