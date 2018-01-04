@@ -12,6 +12,8 @@ export class AutoComplete {
         if(searchBoxes)
             for (let searchBox of searchBoxes)
                 this.registerSearchBox(searchBox);
+
+        window.addEventListener("click", (e: Event) => this.handleDocumentClick(e));
     }
 
     registerSearchBox(element : HTMLElement) {
@@ -38,7 +40,7 @@ export class AutoComplete {
 
             i.setAttribute("class", "fa fa-map-marker");
             li.setAttribute("class", "autoComplete row");
-            li.addEventListener("click", (e: Event) => this.handleLiClick(<HTMLElement> e.target));
+            li.addEventListener("click", (e: Event) => this.handleLiClick(e));
             p.innerText = text;
 
             li.appendChild(i);
@@ -48,14 +50,27 @@ export class AutoComplete {
         }
     }
 
-    handleLiClick(element: HTMLElement) {
+    isInContainer(element: HTMLElement) {
         let ul = element;
+
         while (ul && ul.tagName != "UL")
             ul = ul.parentElement;
 
-        if(!ul)
+        return ul && ul === this.container;
+    }
+
+    handleDocumentClick(event: Event) {
+        if(this.container.children || this.container.children.length < 1)
+            this.clearContainer();
+    }
+
+    handleLiClick(event: Event) {
+        const element = <HTMLElement> event.target;
+
+        if(!this.isInContainer(element))
             return;
 
+        event.stopPropagation();
         this.activeSearchBox.value = element.outerText;
         this.activeSearchBox.dispatchEvent(new Event("input"));
         this.clearContainer();
