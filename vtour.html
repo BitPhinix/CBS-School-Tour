@@ -30,6 +30,9 @@
         </div>
     </header>
 
+
+
+
     <main>
         <div id="navSlider">
             <div id="navHeader" class="card">
@@ -51,6 +54,41 @@
             <ul id="autoCompleteContainerNav" class="card"></ul>
         </div>
     </main>
+
+
+        <object data="./svg/og1.svg" type="image/svg+xml" id="Map2D"/>
+
+
+    <script src="./node_modules/svg-pan-zoom-rotate/dist/svg-pan-zoom-rotate.js"></script>
+
+    <script>
+        // Don't use window.onLoad like this in production, because it can only listen to one function.
+        window.onload = function() {
+
+            // Expose to window namespace for testing purposes
+
+            svgPanZoomRotate.init('#Map2D', {
+                panEnabled: true,
+                controlIconsEnabled: false,
+                zoomEnabled: true,
+                dblClickZoomEnabled: true,
+                mouseWheelZoomEnabled: true,
+                preventMouseEventsDefault: true,
+                zoomScaleSensitivity: 0.2,
+                minZoom: 0.5,
+                maxZoom: 10,
+                fit: true,
+                contain: false,
+                center: true,
+                refreshRate: 'auto',
+                beforeZoom: beforePan,
+                onZoom: function(){},
+                beforePan: function(){},
+                onPan: function(){}
+            });
+        };
+
+    </script>
 
     <!-- JQuery JS -->
     <script src="./node_modules/jquery/dist/jquery.js"></script>
