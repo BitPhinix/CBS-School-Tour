@@ -7,7 +7,7 @@ import {SlideOut} from "./uiElements/slideOut";
 import {TextBoxSyncer} from "./uiElements/textBoxSyncer";
 import {Map2d} from "./uiElements/map";
 
-$(window).on("load", function () {
+$(function() {
     //Search-boxes
     new AutoComplete(document.getElementById("autoCompleteContainerNav"), document.getElementById("navStart"), document.getElementById("navDestination"));
     new AutoComplete(document.getElementById("autoCompleteContainer"), document.getElementById("searchBox"));
@@ -20,9 +20,7 @@ $(window).on("load", function () {
 
     //TextBox-Syncer
     new TextBoxSyncer(document.getElementById("searchBox"), document.getElementById("navDestination"));
-});
 
-$(window).ready(function () {
     //Map
     new Map2d(document.getElementById("Map2D"), "./svg/og1.svg");
 });
