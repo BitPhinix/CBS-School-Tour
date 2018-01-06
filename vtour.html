@@ -30,9 +30,6 @@
         </div>
     </header>
 
-
-
-
     <main>
         <div id="navSlider">
             <div id="navHeader" class="card">
@@ -53,42 +50,17 @@
             </div>
             <ul id="autoCompleteContainerNav" class="card"></ul>
         </div>
+        <div id="floorSelector" class="card col">
+            <div class="row"><i>2 OG</i></div>
+            <div class="row"><i>1 OG</i></div>
+            <div class="row"><i>EG</i></div>
+            <div class="row"><i>1 UG</i></div>
+        </div>
     </main>
 
-
-        <object data="./svg/og1.svg" type="image/svg+xml" id="Map2D"/>
-
-
-    <script src="./node_modules/svg-pan-zoom-rotate/dist/svg-pan-zoom-rotate.js"></script>
-
-    <script>
-        // Don't use window.onLoad like this in production, because it can only listen to one function.
-        window.onload = function() {
-
-            // Expose to window namespace for testing purposes
-
-            svgPanZoomRotate.init('#Map2D', {
-                panEnabled: true,
-                controlIconsEnabled: false,
-                zoomEnabled: true,
-                dblClickZoomEnabled: true,
-                mouseWheelZoomEnabled: true,
-                preventMouseEventsDefault: true,
-                zoomScaleSensitivity: 0.2,
-                minZoom: 0.5,
-                maxZoom: 10,
-                fit: true,
-                contain: false,
-                center: true,
-                refreshRate: 'auto',
-                beforeZoom: beforePan,
-                onZoom: function(){},
-                beforePan: function(){},
-                onPan: function(){}
-            });
-        };
-
-    </script>
+    <object type="image/svg+xml" data="./svg/og1.svg" id="Map2D">
+        It seems your browser doesn't fully support SVG.
+    </object>
 
     <!-- JQuery JS -->
     <script src="./node_modules/jquery/dist/jquery.js"></script>

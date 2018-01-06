@@ -1,22 +1,31 @@
+///<reference path="../../node_modules/@types/jquery/index.d.ts"/>
 import {Navigator} from "./navigator";
 import {NavigationMap} from "./navigator";
 import {AutoComplete} from "./uiElements/autoComplete";
 import {TextBoxSwapper} from "./uiElements/textBoxSwapper";
 import {SlideOut} from "./uiElements/slideOut";
 import {TextBoxSyncer} from "./uiElements/textBoxSyncer";
+import {Map2d} from "./uiElements/map";
 
-//Search-boxes
-new AutoComplete(document.getElementById("autoCompleteContainerNav"), document.getElementById("navStart"), document.getElementById("navDestination"));
-new AutoComplete(document.getElementById("autoCompleteContainer"), document.getElementById("searchBox"));
+$(window).on("load", function () {
+    //Search-boxes
+    new AutoComplete(document.getElementById("autoCompleteContainerNav"), document.getElementById("navStart"), document.getElementById("navDestination"));
+    new AutoComplete(document.getElementById("autoCompleteContainer"), document.getElementById("searchBox"));
 
-//Swap-Buttons
-new TextBoxSwapper(<HTMLInputElement> document.getElementById("navStart"), <HTMLInputElement> document.getElementById("navDestination"), document.getElementById("swapButton"));
+    //Swap-Buttons
+    new TextBoxSwapper(<HTMLInputElement> document.getElementById("navStart"), <HTMLInputElement> document.getElementById("navDestination"), document.getElementById("swapButton"));
 
-//Slide-Out
-new SlideOut(document.getElementById("navSlider"), document.getElementById("navBarClose"), document.getElementById("navBarOpen"));
+    //Slide-Out
+    new SlideOut(document.getElementById("navSlider"), document.getElementById("navBarClose"), document.getElementById("navBarOpen"));
 
-//TextBox-Syncer
-new TextBoxSyncer(document.getElementById("searchBox"), document.getElementById("navDestination"));
+    //TextBox-Syncer
+    new TextBoxSyncer(document.getElementById("searchBox"), document.getElementById("navDestination"));
+});
+
+$(window).ready(function () {
+    //Map
+    new Map2d(document.getElementById("Map2D"), "./svg/og1.svg");
+});
 
 // ------------ Test stuff -------------
 const map : NavigationMap = {

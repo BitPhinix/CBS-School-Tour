@@ -17,7 +17,7 @@
     "jquery": "^3.2.1",
     "marzipano": "^0.6.0",
     "mdbootstrap": "^4.4.3",
-    "svg-pan-zoom-rotate": "0.0.4"
+    "svg-pan-zoom": "^3.5.3"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.4.1",

@@ -1,5 +1,5 @@
 body, html {
-    background-color: #f7f6f9;
+    background-color: transparent;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -16,6 +16,7 @@ body, html {
 }
 
 #searchBar {
+    z-index: 100;
     margin: 0;
     width: 100%;
     border-radius: 2px;
@@ -49,6 +50,7 @@ body, html {
 
 /* AutoComplete Container*/
 #autoCompleteContainer, #autoCompleteContainerNav {
+    z-index: 1001;
     padding: 0;
     background-color: white;
     border-radius: 2px;
@@ -112,6 +114,7 @@ body, html {
 
 /* navSlider */
 #navSlider {
+    z-index: 101;
     min-width: 300px;
     max-width: 500px;
     width: 50%;
@@ -181,4 +184,55 @@ body, html {
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     transform: rotate(90deg);
+}
+
+/* Floor selector */
+#floorSelector {
+    z-index: 100;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 42px;
+}
+
+#floorSelector div {
+    text-align: center;
+    width: 42px;
+    border-bottom: 1px solid gray;
+}
+
+#floorSelector div:hover {
+    background-color: lightgray;
+}
+
+#floorSelector div:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#floorSelector div:last-child {
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#floorSelector i {
+    font-weight: 500;
+    cursor: pointer;
+    margin: auto;
+    font-style: normal;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Map2D */
+#Map2D {
+    background-color: whitesmoke;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
