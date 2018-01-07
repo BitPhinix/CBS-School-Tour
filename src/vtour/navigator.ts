@@ -1,3 +1,6 @@
+
+//TODO: REWRITE !!!!!
+
 export interface NavigationMap
 {
     [name: string]: NavigationPoint;

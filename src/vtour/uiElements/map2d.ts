@@ -1,15 +1,18 @@
 ///<reference path="../../../node_modules/@types/jquery/index.d.ts"/>
 import svgPanZoom = require("svg-pan-zoom");
 
-export class Map2d {
-    private svgElement;
+export var Map2d  = {
+    svgElement: $("#Map2D"),
 
-    constructor(element: HTMLElement, path: string) {
-        $(element).ready(() => this.onSvgLoad(element));
-    }
+    init: function() {
+        //Add event listeners
+        this.svgElement.ready(() => this.onSvgLoad());
 
-    private onSvgLoad(element) {
-        this.svgElement = svgPanZoom(element, {
+    },
+
+    onSvgLoad: function() {
+        //Init map
+        this.svgElement = svgPanZoom(this.svgElement.get(0), {
             panEnabled: true,
             controlIconsEnabled: false,
             zoomEnabled: true,
@@ -25,4 +28,4 @@ export class Map2d {
             refreshRate: 'auto'
         });
     }
-}
+};
