@@ -1,5 +1,7 @@
 import * as Marzipano from "../../node_modules/marzipano/dist/marzipano.js";
 
+//TODO: REWRITE !!!!!
+
 export interface Position {
     yaw: number,
     pitch: number,

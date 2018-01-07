@@ -8,6 +8,9 @@ export var NavSlider = {
     StartInput: $("#navStart"),
     DestinationInput: $("#navDestination"),
     Container: $("#navSlider"),
+    DestinationSearchIcon: $("#destinationSearchIcon"),
+    StartSearchIcon: $("#startSearchIcon"),
+    SearchInput: $("#searchBox"),
     AutoCompleteContainer: new AutoCompleteContainer(document.getElementById("autoCompleteContainerNav")),
 
     Opened: false,
@@ -23,6 +26,27 @@ export var NavSlider = {
         this.DestinationInput.on("input", (event) => this.onInputChange(event));
         this.DestinationInput.click((event) => this.onInputChange(event));
         this.AutoCompleteContainer.OnRecommendationClickEvent.push((value) => this.onRecommendationEvent(value));
+        this.StartSearchIcon.click((event) => this.onSearchIconClick(event));
+        this.DestinationSearchIcon.click((event) => this.onSearchIconClick(event));
+    },
+
+    onSearchIconClick: function (event: JQuery.Event) {
+        //Get the target input
+        const target = $(event.target).parent().find("input");
+
+        //Set value of SearchInput
+        this.SearchInput.val(target.val());
+
+        //Fire update event
+        this.SearchInput.trigger("input");
+
+        //Close navBar
+        this.onToggleClick();
+    },
+
+    onRecommendationEvent: function (value: string) {
+        //Change ActiveInput value to Recommendation
+        this.ActiveInput.val(value);
     },
 
     onToggleClick: function() {
@@ -30,9 +54,13 @@ export var NavSlider = {
         if(this.Opened)
             //Change left margin to -1000px
             this.Container.animate({marginLeft: "-1000px"}, 100);
-        else //else
+        else { //else
             //Change left margin to 0
             this.Container.animate({marginLeft: "0"}, 100);
+
+            //Copy SearchInput value to DestinationInput
+            this.DestinationInput.val(this.SearchInput.val());
+        }
 
         //Set Opened to new state
         this.Opened = !this.Opened;
@@ -42,6 +70,17 @@ export var NavSlider = {
         //Get element
         const target = $(event.target);
 
+        //If value is empty or whitespace, icon should not be visible
+        const iconVisible = target.val().toString().trim() !== "";
+
+        //If target is DestinationInput
+        if(target.get(0) == this.DestinationInput.get(0))
+            //Change icon visibility of DestinationSearchIcon
+            this.changeVisibility(this.DestinationSearchIcon, iconVisible);
+        else //else
+            //Change icon visibility of StartSearchIcon
+            this.changeVisibility(this.StartSearchIcon, iconVisible);
+
         //Update AutoCompleteContainer
         this.AutoCompleteContainer.update(target.val());
 
@@ -49,9 +88,9 @@ export var NavSlider = {
         this.ActiveInput = target;
     },
 
-    onRecommendationEvent: function (value: String) {
-        //Update the ActiveInput´s value to the Recommendation
-        this.ActiveInput.val(value);
+    changeVisibility: function (element: JQuery, visible: boolean) {
+        //If element should be visible set visibility to shown, else hidden
+        element.css("visibility", visible ? "visible" : "hidden");
     },
 
     onSwapButtonClick: function () {
@@ -63,5 +102,9 @@ export var NavSlider = {
 
         //Change DestinationInput value to temp
         this.DestinationInput.val(temp);
+
+        //Update AutoComplete
+        this.DestinationInput.trigger("input");
+        this.StartInput.trigger("input");
     }
 };

@@ -34,17 +34,23 @@
         <div id="navSlider">
             <div id="navHeader" class="card">
                 <div class="row">
-                    <i class="fa fa-times white-text fa-2x" id="navBarClose"></i>
+                    <i class="fa fa-times white-text fa-2x right" id="navBarClose"></i>
                 </div>
                 <div class="row">
                     <div class="col-1">
                     </div>
                     <div class="col-9">
-                        <input type="text" placeholder="Startpunkt" id="navStart">
-                        <input type="text" placeholder="Ziel" id="navDestination">
+                        <div class="inputWrapper">
+                            <input type="text" placeholder="Startpunkt" id="navStart">
+                            <i class="fa fa-search" id="startSearchIcon" aria-hidden="true" title="Suchen"></i>
+                        </div>
+                        <div class="inputWrapper">
+                            <input type="text" placeholder="Ziel" id="navDestination">
+                            <i class="fa fa-search" id="destinationSearchIcon" aria-hidden="true" title="Suchen"></i>
+                        </div>
                     </div>
                     <div class="col-2">
-                        <i class="fa fa-exchange white-text fa-2x fa-rotate-90" id="swapButton"></i>
+                        <i class="fa fa-exchange white-text fa-2x fa-rotate-90 center" id="swapButton"></i>
                     </div>
                 </div>
             </div>
@@ -59,7 +65,7 @@
     </main>
 
     <object type="image/svg+xml" data="./svg/og1.svg" id="Map2D">
-        It seems your browser doesn't fully support SVG.
+        Woops :( Looks like your browser does not support SVGs. Please use and/or update Chrome or Firefox.
     </object>
 
     <!-- JQuery JS -->

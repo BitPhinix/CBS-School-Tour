@@ -52,9 +52,9 @@ export class AutoCompleteContainer {
         //Get target
         let target = $(event.target);
 
-        //If target isn´t the "p" tag
+        //If target isn´t the "P" tag
         if(target.prop("tagName") !== "P") {
-            //Get closest p
+            //Find Parent of a "P" tag
             while (target && !target.find("P"))
                 target = target.parent();
 
