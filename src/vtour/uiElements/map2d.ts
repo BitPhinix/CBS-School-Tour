@@ -2,17 +2,36 @@
 import svgPanZoom = require("svg-pan-zoom");
 
 export var Map2d  = {
-    svgElement: $("#Map2D"),
+    SvgContainer: $("#Map2dContainer"),
+    SvgElement: undefined,
+    SvgPanZoom: undefined,
 
     init: function() {
-        //Add event listeners
-        this.svgElement.ready(() => this.onSvgLoad());
-
+        this.loadSvg("./svg/og1.svg");
     },
 
-    onSvgLoad: function() {
-        //Init map
-        this.svgElement = svgPanZoom(this.svgElement.get(0), {
+    loadSvg: function(source: string) {
+        //Clear container
+        this.SvgContainer.empty();
+
+        //Create new SVG element
+        const element = $("<embed src='" + source + "' type='image/svg+xml' id='Map2D'>");
+
+        //Append to Container
+        this.SvgContainer.append(element);
+
+        //Update SvgElement
+        this.SvgElement = element;
+
+        //Add event listener
+        element.on("load", () => this.onSvgLoad());
+    },
+
+    onSvgLoad: function () {
+        this.SvgContainer.show();
+
+        //Init SvgPanZoom
+        this.SvgPanZoom = svgPanZoom(this.SvgElement.get(0), {
             panEnabled: true,
             controlIconsEnabled: false,
             zoomEnabled: true,
@@ -25,7 +44,9 @@ export var Map2d  = {
             fit: true,
             contain: false,
             center: true,
-            refreshRate: 'auto'
+            refreshRate: "auto"
         });
+
+        this.SvgPanZoom.show();
     }
 };
