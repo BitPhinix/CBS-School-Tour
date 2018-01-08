@@ -1,5 +1,6 @@
 ///<reference path="../../../node_modules/@types/jquery/index.d.ts"/>
 import {AutoCompleteContainer} from "../Components/autoCompleteContainer";
+import {AutoComplete} from "../Components/autoComplete";
 
 export var NavSlider = {
     OpenButton: $("#navBarOpen"),
@@ -42,11 +43,16 @@ export var NavSlider = {
 
         //Close navBar
         this.onToggleClick();
+
+        //TODO: Zoom To Room
     },
 
     onRecommendationEvent: function (value: string) {
         //Change ActiveInput value to Recommendation
         this.ActiveInput.val(value);
+
+        //Fire update event
+        this.ActiveInput.trigger("input");
     },
 
     onToggleClick: function() {
@@ -86,6 +92,12 @@ export var NavSlider = {
 
         //Update ActiveInput
         this.ActiveInput = target;
+
+        //Check if input is complete
+        if(AutoComplete.isRoom(this.DestinationInput.val()) && AutoComplete.isRoom(this.StartInput.val()))
+            //TODO: Navigate
+            console.log("navigate");
+            return;
     },
 
     changeVisibility: function (element: JQuery, visible: boolean) {

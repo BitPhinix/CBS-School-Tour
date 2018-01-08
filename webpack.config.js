@@ -1,7 +1,15 @@
+var buildEntryPoint = function (entryPoint) {
+  return [
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/only-dev-server',
+      entryPoint
+  ]
+};
+
 module.exports = {
     entry: {
-        vtour : "./src/vtour/vtour.ts",
-        index : "./src/index/index.ts"
+        vtour : buildEntryPoint("./src/vtour/vtour.ts"),
+        index : buildEntryPoint("./src/index/index.ts")
     },
     output: {
         filename: "[name].bundle.js",
@@ -14,7 +22,6 @@ module.exports = {
         // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".ts", ".tsx", ".js", ".json"]
     },
-
     module: {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.

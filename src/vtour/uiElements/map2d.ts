@@ -7,7 +7,7 @@ export var Map2d  = {
     SvgPanZoom: undefined,
 
     init: function() {
-        this.loadSvg("./svg/og1.svg");
+        this.loadSvg("./svg/1 OG.svg");
     },
 
     loadSvg: function(source: string) {
@@ -28,8 +28,6 @@ export var Map2d  = {
     },
 
     onSvgLoad: function () {
-        this.SvgContainer.show();
-
         //Init SvgPanZoom
         this.SvgPanZoom = svgPanZoom(this.SvgElement.get(0), {
             panEnabled: true,
@@ -42,11 +40,8 @@ export var Map2d  = {
             minZoom: 0.5,
             maxZoom: 10,
             fit: true,
-            contain: false,
             center: true,
             refreshRate: "auto"
         });
-
-        this.SvgPanZoom.show();
     }
 };

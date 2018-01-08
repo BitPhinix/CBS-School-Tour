@@ -139,12 +139,13 @@ body, html {
 }
 
 #navHeader {
+    padding-bottom: 10px !important;
     background-color: #4384F6;
     border-radius: 0;
 }
 
 #navHeader input {
-    margin: 10px 0;
+    margin: 10px 0 0 0 !important;
     padding: 0;
     color: white;
     border-bottom-color: #B9CCFA;
@@ -155,10 +156,6 @@ body, html {
     color: #B9CCFA;
     font-weight: 400;
     font-size: 15px;
-}
-
-#navHeader input:last-child {
-    margin-bottom: 30px !important;
 }
 
 #navBarClose {

@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "start http://localhost:8080/webpack-dev-server/index.html & webpack-dev-server",
-    "start-index": "start http://localhost:8080/webpack-dev-server/index.html & webpack-dev-server",
-    "start-vtour": "start http://localhost:8080/webpack-dev-server/vtour.html & webpack-dev-server",
-    "build": "webpack",
-    "autobuild": "webpack -w"
+    "start": "start http://localhost:8080/webpack-dev-server/index.html & webpack-dev-server --hot",
+    "start-index": "start http://localhost:8080/webpack-dev-server/index.html & webpack-dev-server --hot",
+    "start-vtour": "start http://localhost:8080/webpack-dev-server/vtour.html & webpack-dev-server --hot",
+    "build": "webpack --hot",
+    "autobuild": "webpack -w --hot"
   },
   "author": "",
   "license": "ISC",
