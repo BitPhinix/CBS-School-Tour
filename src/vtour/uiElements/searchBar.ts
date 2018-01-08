@@ -4,7 +4,7 @@ import {AutoComplete} from "../Components/autoComplete";
 
 import Toastr = require("toastr");
 
-export var SearchBar = {
+export const SearchBar = {
     Input: $("#searchBox"),
     FindButton: $("#findElement"),
     AutoCompleteContainer: new AutoCompleteContainer(document.getElementById("autoCompleteContainer")),
@@ -24,7 +24,6 @@ export var SearchBar = {
     },
 
     onFindButtonClick: function () {
-        //Todo Zoom to element
         const results = AutoComplete.getResults(this.Input.val());
 
         if(results.length == 1)

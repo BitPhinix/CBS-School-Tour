@@ -1,4 +1,4 @@
-export var AutoComplete = {
+export const AutoComplete = {
     RoomMax: 300,
     RoomMin: 0,
     SpecialRooms : ["Sekretariat", "Lehrerzimmer", "Physiklabor"],
@@ -23,19 +23,5 @@ export var AutoComplete = {
             result.push("Raum " + number);
 
         return result;
-    },
-
-    isRoom: function (text: string) {
-        if(this.SpecialRooms.includes(text))
-            return true;
-
-        if(!text.match(new RegExp("Raum \\d.*")))
-            return false;
-
-        //Get all numbers out of text (test213 21 => 21321)
-        const number = parseInt(text.replace(/[^0-9]/g, ''));
-
-        //Check if number is in range
-        return number <= this.RoomMax && number >= this.RoomMin;
     }
 };

@@ -2,8 +2,9 @@
 import {SearchBar} from "./searchBar";
 import {AutoCompleteContainer} from "../Components/autoCompleteContainer";
 import {AutoComplete} from "../Components/autoComplete";
+import Toastr = require("toastr");
 
-export var NavSlider = {
+export const NavSlider = {
     OpenButton: $("#navBarOpen"),
     CloseButton: $("#navBarClose"),
     SwapButton: $("#swapButton"),
@@ -30,6 +31,29 @@ export var NavSlider = {
         this.AutoCompleteContainer.OnRecommendationClickEvent.push((value) => this.onRecommendationEvent(value));
         this.StartSearchIcon.click((event) => this.onSearchIconClick(event));
         this.DestinationSearchIcon.click((event) => this.onSearchIconClick(event));
+        this.DestinationInput.keyup((event) => this.onKeyUp(event));
+        this.StartInput.keyup((event) => this.onKeyUp(event));
+    },
+
+    onKeyUp: function (event: JQuery.Event) {
+        //Key isn´t Enter
+        if(event.keyCode !== 13)
+            return;
+
+        //More then 1 or no result
+        if(AutoComplete.getResults(this.DestinationInput.val()).length !== 1)
+            //Alert
+            Toastr.error("Das Ziel wurde nicht gefunden/ist nicht eindeutig!");
+
+        //More then 1 or no result
+        else if(AutoComplete.getResults(this.StartInput.val()).length !== 1)
+            //Alert
+            Toastr.error("Der Startpunkt wurde nicht gefunden/ist nicht eindeutig!");
+
+        //Everything is OK
+        else
+            //TODO: Navigate
+            return;
     },
 
     onSearchIconClick: function (event: JQuery.Event) {
@@ -44,8 +68,6 @@ export var NavSlider = {
 
         //Search for element
         SearchBar.onFindButtonClick();
-
-        //TODO: Zoom To Room
     },
 
     onRecommendationEvent: function (value: string) {
@@ -93,12 +115,6 @@ export var NavSlider = {
 
         //Update ActiveInput
         this.ActiveInput = target;
-
-        //Check if input is complete
-        if(AutoComplete.isRoom(this.DestinationInput.val()) && AutoComplete.isRoom(this.StartInput.val()))
-            //TODO: Navigate
-            console.log("navigate");
-            return;
     },
 
     changeVisibility: function (element: JQuery, visible: boolean) {

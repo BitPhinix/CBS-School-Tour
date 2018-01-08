@@ -16,8 +16,8 @@ export const FloorSelect = {
         //Get the element
         let target = $(event.target);
 
-        //Load the new Map
-        Map2d.loadSvg("./svg/" + target.html() + ".svg");
+        //Get the path
+        const path = "./svg/" + target.html() + ".svg";
 
         //Get div
         while (target && target.prop("tagName") !== "DIV")
@@ -25,6 +25,13 @@ export const FloorSelect = {
 
         if(!target)
             return;
+
+        //Nothing to do !
+        if(target.hasClass("clicked"))
+            return;
+
+        //Load the new Map
+        Map2d.loadSvg(path);
 
         //Remove clicked class of div
         for (let child of this.FloorSelect.children())

@@ -1,7 +1,7 @@
 ///<reference path="../../../node_modules/@types/jquery/index.d.ts"/>
 import svgPanZoom = require("svg-pan-zoom");
 
-export var Map2d  = {
+export const Map2d  = {
     SvgContainer: $("#Map2dContainer"),
     SvgElement: undefined,
     SvgPanZoom: undefined,
