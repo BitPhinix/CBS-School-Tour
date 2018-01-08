@@ -235,6 +235,7 @@ body, html {
 
 #floorSelector div.clicked {
     background-color: lightgray;
+    cursor: default;
 }
 
 #floorSelector div:first-child {
