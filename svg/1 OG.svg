@@ -9,7 +9,6 @@
   </g>
  </g>
  <g>
-  <title>Layer 1</title>
   <rect fill="#e5e5e5" stroke-width="1.5" x="139" y="36" width="58" height="70" id="svg_4" stroke="#000"/>
   <rect fill="#e5e5e5" stroke-width="1.5" x="197" y="36" width="58" height="70" id="svg_5" stroke="#000"/>
   <rect fill="#e5e5e5" stroke-width="1.5" x="255" y="36" width="58" height="70" id="svg_6" stroke="#000"/>
@@ -98,5 +97,6 @@
   <rect fill="#e5e5e5" stroke-width="1.5" x="70" y="36" width="69" height="70" id="svg_8" stroke="#000"/>
   <text fill="#000000" stroke="#000" stroke-width="0" stroke-opacity="null" fill-opacity="null" x="90.408284" y="101.139951" id="svg_98" font-size="10" font-family="Euphoria, sans-serif" text-anchor="start" xml:space="preserve">Raum 101</text>
   <text fill="#000000" stroke="#000" stroke-width="0" stroke-opacity="null" fill-opacity="null" x="34.020659" y="163" id="svg_99" font-size="10" font-family="Euphoria, sans-serif" text-anchor="start" xml:space="preserve">Raum 105</text>
+
  </g>
 </svg>
