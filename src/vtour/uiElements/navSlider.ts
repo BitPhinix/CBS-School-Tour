@@ -2,7 +2,7 @@
 import {SearchBar} from "./searchBar";
 import {AutoCompleteContainer} from "../Components/autoCompleteContainer";
 import {AutoComplete} from "../Components/autoComplete";
-import {Navigator} from "../navigator2";
+import {Navigator} from "../navigator";
 import Toastr = require("toastr");
 
 export const NavSlider = {

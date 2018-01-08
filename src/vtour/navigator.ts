@@ -1,86 +1,54 @@
 import * as NavData from "../../nav/data.json";
 import {RoomLocation} from "./Components/autoComplete";
+import Graph = require('node-dijkstra');
 
-//TODO: REWRITE !!!!!
-
-export interface NavigationMap
-{
-    [name: string]: NavigationPoint;
+interface CostList {
+    [id: string]: number;
 }
 
-interface NavigationPoint
-{
-    connectedTo: string[];
-    type: NavigationPointType;
-    position: Position;
-}
+export const Navigator = {
 
-interface NavigationPointType
-{
-    corridor,
-    room,
-    stairway
-}
+    navigateGlobal: function (start: RoomLocation, end: RoomLocation) {
 
-interface Position
-{
-    x: number;
-    y: number;
-}
+    },
 
-interface DifficultyMap {
-    [key: string] : { distance : number, parent: string };
-}
+    navigateFloor: function (start: number, end: number, floorId: number) {
+        //Get graph
+        const graph = this.getGraph(NavData.floors[floorId]);
 
-export var Navigator = {
+        //Get result
+        const result = graph.path(start.toString(), end.toString());
+    },
 
-    navigate: function(start: number, end: number, floor: number) : string[]
-    {
-        const processed = [];
-        const difficultyMap : DifficultyMap = { [start]: { parent:null, distance: 0}, [end]: { parent:null, distance: Infinity}};
+    getGraph: function(floor: Floor) {
+        //Create new Graph-Map
+        const graph = new Map();
 
-        for (let child of NavData.floors[floor][start].connectedTo)
-            difficultyMap[child] = { parent: start.toString(), distance: Infinity };
+        for (let key of Object.keys(floor)) {
+            //Get room
+            let room = floor[key];
 
-        let current : string;
+            //Create new Map
+            let map = new Map();
 
-        while (current = Navigator.getCheapest(difficultyMap, processed))
-        {
-            for(let child of NavData.floors[floor][current].connectedTo)
-            {
-                let cost = Navigator.getDistance(NavData.floors[floor][current].location, NavData.floors[floor][child].location);
+            //For each connected node
+            for (let node of room.connectedTo)
+                //Calc costs and add to map
+                map.set(node.toString(), this.getCost(room.location, floor[node].location));
 
-                if(!difficultyMap.hasOwnProperty(child) || difficultyMap[child].distance > cost)
-                    difficultyMap[child] = { parent: current, distance: cost };
-            }
-
-            processed.push(current);
+            //Add map to graph
+            graph.set(key.toString(), map);
         }
 
-        let result : string[] = [end.toString()];
-        let parent = difficultyMap[end].parent;
-
-        while(parent)
-        {
-            result.unshift(parent);
-            parent = difficultyMap[parent].parent;
-        }
-
-        return result;
+        //Create graph obj
+        return new Graph(graph);
     },
 
-    getCheapest: function(difficultyMap : DifficultyMap, processed : string[]) : string {
-        let cheapest : string = null;
+    getCost(x: Point, y: Point): number {
+        //Calc distance
+        const distance = Math.sqrt(Math.pow(x.x - y.x, 2) + Math.pow(x.y - y.y, 2));
 
-        for (let key of Object.keys(difficultyMap))
-            if((cheapest == null || difficultyMap[key] < difficultyMap[cheapest]) && processed.indexOf(key) === -1)
-                cheapest = key;
-
-        return cheapest;
-    },
-
-    getDistance: function(p1: Position, p2: Position) : number
-    {
-        return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
-    },
+        //Distance should not be null !
+        return distance > 0 ? distance : 0.000001;
+    }
 };
