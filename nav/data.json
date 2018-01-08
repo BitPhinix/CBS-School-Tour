@@ -7,7 +7,11 @@
         "connectedTo": [
           1,
           12
-        ]
+        ],
+        "location": {
+          "x": 96,
+          "y": 140
+        }
       },
       {
         "description": "Schlüsselpunkt",
@@ -15,7 +19,11 @@
         "connectedTo": [
           0,
           2
-        ]
+        ],
+        "location": {
+          "x": 96,
+          "y": 119
+        }
       },
       {
         "description": "Klassenzimmer",
@@ -23,7 +31,11 @@
         "connectedTo": [
           1,
           3
-        ]
+        ],
+        "location": {
+          "x": 125,
+          "y": 119
+        }
       },
       {
         "description": "Klassenzimmer",
@@ -31,7 +43,11 @@
         "connectedTo": [
           2,
           4
-        ]
+        ],
+        "location": {
+          "x": 181,
+          "y": 119
+        }
       },
       {
         "description": "Klassenzimmer",
@@ -39,7 +55,11 @@
         "connectedTo": [
           3,
           5
-        ]
+        ],
+        "location": {
+          "x": 241,
+          "y": 119
+        }
       },
       {
         "description": "Klassenzimmer",
@@ -47,7 +67,11 @@
         "connectedTo": [
           7,
           8
-        ]
+        ],
+        "location": {
+          "x": 297,
+          "y": 119
+        }
       },
       {
         "description": "Schlüsselpunkt",
@@ -56,7 +80,11 @@
           5,
           8,
           17
-        ]
+        ],
+        "location": {
+          "x": 327,
+          "y": 119
+        }
       },
       {
         "description": "Computerraum",
@@ -64,7 +92,11 @@
         "connectedTo": [
           4,
           5
-        ]
+        ],
+        "location": {
+          "x": 257,
+          "y": 119
+        }
       },
       {
         "description": "Physikraum",
@@ -72,7 +104,11 @@
         "connectedTo": [
           6,
           9
-        ]
+        ],
+        "location": {
+          "x": 398,
+          "y": 119
+        }
       },
       {
         "description": "Physikraum",
@@ -80,7 +116,11 @@
         "connectedTo": [
           8,
           10
-        ]
+        ],
+        "location": {
+          "x": 465,
+          "y": 119
+        }
       },
       {
         "description": "Physikraum",
@@ -88,7 +128,11 @@
         "connectedTo": [
           9,
           11
-        ]
+        ],
+        "location": {
+          "x": 513,
+          "y": 119
+        }
       },
       {
         "description": "Physikraum",
@@ -96,7 +140,11 @@
         "connectedTo": [
           10,
           21
-        ]
+        ],
+        "location": {
+          "x": 573,
+          "y": 119
+        }
       },
       {
         "description": "Klassenarbeitsraum",
@@ -104,7 +152,11 @@
         "connectedTo": [
           0,
           13
-        ]
+        ],
+        "location": {
+          "x": 96,
+          "y": 184
+        }
       },
       {
         "description": "Schlüsselpunkt",
@@ -112,7 +164,11 @@
         "connectedTo": [
           12,
           14
-        ]
+        ],
+        "location": {
+          "x": 96,
+          "y": 310
+        }
       },
       {
         "description": "Lehrerzimmer",
@@ -120,7 +176,11 @@
         "connectedTo": [
           13,
           15
-        ]
+        ],
+        "location": {
+          "x": 180,
+          "y": 310
+        }
       },
       {
         "description": "Direktorat",
@@ -128,7 +188,11 @@
         "connectedTo": [
           14,
           16
-        ]
+        ],
+        "location": {
+          "x": 239,
+          "y": 310
+        }
       },
       {
         "description": "Sekretariat",
@@ -136,7 +200,11 @@
         "connectedTo": [
           15,
           17
-        ]
+        ],
+        "location": {
+          "x": 273,
+          "y": 310
+        }
       },
       {
         "description": "Schlüsselpunkt",
@@ -145,7 +213,11 @@
           16,
           7,
           18
-        ]
+        ],
+        "location": {
+          "x": 327,
+          "y": 310
+        }
       },
       {
         "description": "Computerraum",
@@ -153,7 +225,11 @@
         "connectedTo": [
           17,
           19
-        ]
+        ],
+        "location": {
+          "x": 385,
+          "y": 310
+        }
       },
       {
         "description": "WC",
@@ -161,7 +237,11 @@
         "connectedTo": [
           18,
           20
-        ]
+        ],
+        "location": {
+          "x": 430,
+          "y": 310
+        }
       },
       {
         "description": "Computerraum",
@@ -169,7 +249,11 @@
         "connectedTo": [
           19,
           23
-        ]
+        ],
+        "location": {
+          "x": 612,
+          "y": 310
+        }
       },
       {
         "description": "Physikraum",
@@ -177,15 +261,24 @@
         "connectedTo": [
           11,
           22
-        ]
+        ],
+        "location": {
+          "x": 573,
+          "y": 119
+        }
       },
       {
         "description": "Schlüsselpunkt",
         "number": null,
         "connectedTo": [
           21,
-          23
-        ]
+          23,
+          24
+        ],
+        "location": {
+          "x": 640,
+          "y": 119
+        }
       },
       {
         "description": "Schlüsselpunkt",
@@ -194,7 +287,11 @@
           20,
           22,
           31
-        ]
+        ],
+        "location": {
+          "x": 640,
+          "y": 310
+        }
       },
       {
         "description": "Klassenarbeitsraum",
@@ -202,7 +299,11 @@
         "connectedTo": [
           22,
           25
-        ]
+        ],
+        "location": {
+          "x": 699,
+          "y": 119
+        }
       },
       {
         "description": "Klassenzimmer",
@@ -210,7 +311,11 @@
         "connectedTo": [
           24,
           26
-        ]
+        ],
+        "location": {
+          "x": 733,
+          "y": 119
+        }
       },
       {
         "description": "Klassenzimmer",
@@ -218,7 +323,11 @@
         "connectedTo": [
           25,
           27
-        ]
+        ],
+        "location": {
+          "x": 796,
+          "y": 119
+        }
       },
       {
         "description": "Klassenzimmer",
@@ -226,7 +335,11 @@
         "connectedTo": [
           26,
           28
-        ]
+        ],
+        "location": {
+          "x": 860,
+          "y": 119
+        }
       },
       {
         "description": "Klassenzimmer",
@@ -234,7 +347,11 @@
         "connectedTo": [
           27,
           29
-        ]
+        ],
+        "location": {
+          "x": 917,
+          "y": 119
+        }
       },
       {
         "description": "Klassenzimmer",
@@ -242,7 +359,11 @@
         "connectedTo": [
           28,
           30
-        ]
+        ],
+        "location": {
+          "x": 917,
+          "y": 166
+        }
       },
       {
         "description": "Klassenzimmer",
@@ -250,7 +371,11 @@
         "connectedTo": [
           29,
           32
-        ]
+        ],
+        "location": {
+          "x": 917,
+          "y": 239
+        }
       },
       {
         "description": "Computerraum",
@@ -258,15 +383,24 @@
         "connectedTo": [
           32,
           23
-        ]
+        ],
+        "location": {
+          "x": 695,
+          "y": 310
+        }
       },
       {
         "description": "Klassenzimmer",
         "number": 170,
         "connectedTo": [
           30,
-          23
-        ]
+          33,
+          31
+        ],
+        "location": {
+          "x": 917,
+          "y": 310
+        }
       },
       {
         "description": "Klassenzimmer",
@@ -274,7 +408,11 @@
         "connectedTo": [
           32,
           34
-        ]
+        ],
+        "location": {
+          "x": 917,
+          "y": 370
+        }
       },
       {
         "description": "Computerraum",
@@ -282,38 +420,72 @@
         "connectedTo": [
           33,
           35
-        ]
+        ],
+        "location": {
+          "x": 917,
+          "y": 457
+        }
       },
       {
         "description": "Schlüsselpunkt",
         "number": null,
         "connectedTo": [
           34,
-          36
-        ]
+          36,
+          37
+        ],
+        "location": {
+          "x": 917,
+          "y": 499
+        }
       },
       {
         "description": "Klassenzimmer",
         "number": 165,
         "connectedTo": [
           35,
-          37
-        ]
+          38
+        ],
+        "location": {
+          "x": 880,
+          "y": 499
+        }
       },
       {
-        "description": "Klassenzimmer",
-        "number": 164,
+        "description": "Computerraum",
+        "number": 166,
         "connectedTo": [
-          36,
+          35,
           38
-        ]
+        ],
+        "location": {
+          "x": 880,
+          "y": 499
+        }
       },
       {
         "description": "Klassenzimmer",
         "number": 162,
         "connectedTo": [
+          39,
+          37,
+          36
+        ],
+        "location": {
+          "x": 855,
+          "y": 499
+        }
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 164,
+        "connectedTo": [
           "37"
-        ]
+        ],
+        "location": {
+          "x": 847,
+          "y": 499
+        }
       }
     ]
   }

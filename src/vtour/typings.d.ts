@@ -8,7 +8,6 @@ declare class NavData {
 }
 
 declare class Floor {
-    description: string;
     [id: number]: ClassRoom;
 }
 
