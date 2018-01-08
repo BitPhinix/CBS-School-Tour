@@ -1,0 +1,320 @@
+{
+  "floors": {
+    "1": [
+      {
+        "description": "Klassenzimmer",
+        "number": 105,
+        "connectedTo": [
+          1,
+          12
+        ]
+      },
+      {
+        "description": "Schlüsselpunkt",
+        "number": null,
+        "connectedTo": [
+          0,
+          2
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 101,
+        "connectedTo": [
+          1,
+          3
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 102,
+        "connectedTo": [
+          2,
+          4
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 103,
+        "connectedTo": [
+          3,
+          5
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 104,
+        "connectedTo": [
+          7,
+          8
+        ]
+      },
+      {
+        "description": "Schlüsselpunkt",
+        "number": null,
+        "connectedTo": [
+          5,
+          8,
+          17
+        ]
+      },
+      {
+        "description": "Computerraum",
+        "number": 111,
+        "connectedTo": [
+          4,
+          5
+        ]
+      },
+      {
+        "description": "Physikraum",
+        "number": 131,
+        "connectedTo": [
+          6,
+          9
+        ]
+      },
+      {
+        "description": "Physikraum",
+        "number": 136,
+        "connectedTo": [
+          8,
+          10
+        ]
+      },
+      {
+        "description": "Physikraum",
+        "number": 137,
+        "connectedTo": [
+          9,
+          11
+        ]
+      },
+      {
+        "description": "Physikraum",
+        "number": 138,
+        "connectedTo": [
+          10,
+          21
+        ]
+      },
+      {
+        "description": "Klassenarbeitsraum",
+        "number": 106,
+        "connectedTo": [
+          0,
+          13
+        ]
+      },
+      {
+        "description": "Schlüsselpunkt",
+        "number": null,
+        "connectedTo": [
+          12,
+          14
+        ]
+      },
+      {
+        "description": "Lehrerzimmer",
+        "number": 117,
+        "connectedTo": [
+          13,
+          15
+        ]
+      },
+      {
+        "description": "Direktorat",
+        "number": 126,
+        "connectedTo": [
+          14,
+          16
+        ]
+      },
+      {
+        "description": "Sekretariat",
+        "number": 128,
+        "connectedTo": [
+          15,
+          17
+        ]
+      },
+      {
+        "description": "Schlüsselpunkt",
+        "number": null,
+        "connectedTo": [
+          16,
+          7,
+          18
+        ]
+      },
+      {
+        "description": "Computerraum",
+        "number": 140,
+        "connectedTo": [
+          17,
+          19
+        ]
+      },
+      {
+        "description": "WC",
+        "number": null,
+        "connectedTo": [
+          18,
+          20
+        ]
+      },
+      {
+        "description": "Computerraum",
+        "number": 143,
+        "connectedTo": [
+          19,
+          23
+        ]
+      },
+      {
+        "description": "Physikraum",
+        "number": 142,
+        "connectedTo": [
+          11,
+          22
+        ]
+      },
+      {
+        "description": "Schlüsselpunkt",
+        "number": null,
+        "connectedTo": [
+          21,
+          23
+        ]
+      },
+      {
+        "description": "Schlüsselpunkt",
+        "number": null,
+        "connectedTo": [
+          20,
+          22,
+          31
+        ]
+      },
+      {
+        "description": "Klassenarbeitsraum",
+        "number": 154,
+        "connectedTo": [
+          22,
+          25
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 150,
+        "connectedTo": [
+          24,
+          26
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 151,
+        "connectedTo": [
+          25,
+          27
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 152,
+        "connectedTo": [
+          26,
+          28
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 153,
+        "connectedTo": [
+          27,
+          29
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 172,
+        "connectedTo": [
+          28,
+          30
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 171,
+        "connectedTo": [
+          29,
+          32
+        ]
+      },
+      {
+        "description": "Computerraum",
+        "number": 159,
+        "connectedTo": [
+          32,
+          23
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 170,
+        "connectedTo": [
+          30,
+          23
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 169,
+        "connectedTo": [
+          32,
+          34
+        ]
+      },
+      {
+        "description": "Computerraum",
+        "number": 167,
+        "connectedTo": [
+          33,
+          35
+        ]
+      },
+      {
+        "description": "Schlüsselpunkt",
+        "number": null,
+        "connectedTo": [
+          34,
+          36
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 165,
+        "connectedTo": [
+          35,
+          37
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 164,
+        "connectedTo": [
+          36,
+          38
+        ]
+      },
+      {
+        "description": "Klassenzimmer",
+        "number": 162,
+        "connectedTo": [
+          "37"
+        ]
+      }
+    ]
+  }
+}

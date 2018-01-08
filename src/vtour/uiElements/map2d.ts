@@ -1,5 +1,6 @@
 ///<reference path="../../../node_modules/@types/jquery/index.d.ts"/>
 import svgPanZoom = require("svg-pan-zoom");
+import {AutoComplete} from "../Components/autoComplete";
 
 export const Map2d  = {
     SvgContainer: $("#Map2dContainer"),
@@ -43,5 +44,12 @@ export const Map2d  = {
             center: true,
             refreshRate: "auto"
         });
+    },
+
+    navigate: function (start: string, destination: string) {
+
+        const startNmbr = AutoComplete.getRoomNumber(start);
+        const destNmbr = AutoComplete.getRoomNumber(destination);
+
     }
 };

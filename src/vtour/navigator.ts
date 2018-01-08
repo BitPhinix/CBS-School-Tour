@@ -1,3 +1,4 @@
+import * as DataJson from "../../nav/data.json";
 
 //TODO: REWRITE !!!!!
 

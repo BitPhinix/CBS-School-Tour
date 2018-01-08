@@ -39,7 +39,7 @@ export const NavSlider = {
         //Key isn´t Enter
         if(event.keyCode !== 13)
             return;
-
+        
         //More then 1 or no result
         if(AutoComplete.getResults(this.DestinationInput.val()).length !== 1)
             //Alert

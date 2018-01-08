@@ -1,7 +1,6 @@
+import * as NavData from "../../../nav/data.json";
+
 export const AutoComplete = {
-    RoomMax: 300,
-    RoomMin: 0,
-    SpecialRooms : ["Sekretariat", "Lehrerzimmer", "Physiklabor"],
 
     getResults: function(input: String) {
         //Remove unnecessary whitespaces, text to lower case
@@ -11,17 +10,28 @@ export const AutoComplete = {
         if(input == "")
             return [];
 
-        //Check if SpecialRooms contains a part on input
-        const result = this.SpecialRooms.filter(value => value.toLowerCase().includes(input));
+        console.log(NavData.floors[1][0].description);
 
         //Get all numbers out of text (test213 21 => 21321)
-        const number = parseInt(input.replace(/[^0-9]/g, ''));
+        const number = input.replace(/[^0-9]/g, '');
 
-        //Check if number is in range
-        if(number <= this.RoomMax && number >= this.RoomMin)
-        //Add Room with number to the result
-            result.push("Raum " + number);
+        //Create Result array
+        const result: string[] = [];
+
+        for (let floor of NavData.floors) {
+            for (let key of Object.keys(floor)) {
+                let room = floor[key];
+
+                if (room.description.toLocaleLowerCase().contains(input) || room.number.startsWith(number))
+                    result.push(room.description + " " + room.number);
+            }
+        }
 
         return result;
+    },
+
+    getRoomNumber: function (input: string) {
+      return this.getResults(input)[0];
     }
 };
+
