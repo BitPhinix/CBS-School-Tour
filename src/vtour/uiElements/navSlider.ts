@@ -2,6 +2,7 @@
 import {SearchBar} from "./searchBar";
 import {AutoCompleteContainer} from "../Components/autoCompleteContainer";
 import {AutoComplete} from "../Components/autoComplete";
+import {Navigator} from "../navigator2";
 import Toastr = require("toastr");
 
 export const NavSlider = {
@@ -58,7 +59,7 @@ export const NavSlider = {
 
         //Everything is OK
         else
-            //TODO: Navigate
+            console.log(Navigator.navigateFloor(startLocation.id, destLocation.id, startLocation.floor));
             return;
     },
 

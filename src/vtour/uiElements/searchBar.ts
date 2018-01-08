@@ -1,7 +1,8 @@
 ///<reference path="../../../node_modules/@types/jquery/index.d.ts"/>
 import {AutoCompleteContainer} from "../Components/autoCompleteContainer";
 import {AutoComplete} from "../Components/autoComplete";
-
+import {Map2d} from "./map2d";
+import * as NavData from "../../../nav/data.json";
 import Toastr = require("toastr");
 
 export const SearchBar = {
@@ -30,9 +31,13 @@ export const SearchBar = {
         //Location was not found
         if(!result)
             Toastr.error("Eingabe ist nicht eindeutig!");
-        else
-            //Todo Zoom to Location
-            return;
+        else {
+            //Get location
+            const location = NavData.floors[result.floor][result.id].location;
+
+            //Look to location
+            Map2d.lookTo(result.floor, location.x, location.y);
+        }
     },
 
     onInputChange(event: JQuery.Event) {

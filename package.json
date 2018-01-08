@@ -18,6 +18,7 @@
     "jquery": "^3.2.1",
     "marzipano": "^0.6.0",
     "mdbootstrap": "^4.4.3",
+    "node-dijkstra": "^2.5.0",
     "svg-pan-zoom": "^3.5.3",
     "toastr": "^2.1.4"
   },
