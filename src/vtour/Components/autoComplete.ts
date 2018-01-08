@@ -76,7 +76,7 @@ export const AutoComplete = {
     }
 };
 
-interface RoomLocation {
+export interface RoomLocation {
     floor: number;
     id: number;
 }
