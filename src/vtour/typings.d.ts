@@ -4,7 +4,7 @@ declare module "*data.json" {
 }
 
 declare class NavData {
-    floors: Floor[];
+    [id: string]: Floor;
 }
 
 declare class Floor {

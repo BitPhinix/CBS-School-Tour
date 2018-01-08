@@ -39,16 +39,22 @@ export const NavSlider = {
         //Key isn´t Enter
         if(event.keyCode !== 13)
             return;
-        
-        //More then 1 or no result
-        if(AutoComplete.getResults(this.DestinationInput.val()).length !== 1)
-            //Alert
-            Toastr.error("Das Ziel wurde nicht gefunden/ist nicht eindeutig!");
 
-        //More then 1 or no result
-        else if(AutoComplete.getResults(this.StartInput.val()).length !== 1)
+        //Try to get the start location
+        const startLocation = AutoComplete.searchRoomLocation(this.StartInput.val());
+
+        //Try to get the destination location
+        const destLocation = AutoComplete.searchRoomLocation(this.DestinationInput.val());
+
+        //Start-Location was not found
+        if(!startLocation)
             //Alert
-            Toastr.error("Der Startpunkt wurde nicht gefunden/ist nicht eindeutig!");
+            Toastr.error("Der Start wurde nicht gefunden bzw. ist nicht eindeutig!");
+
+        //Destination-Location was not found
+        else if(!destLocation)
+        //Alert
+            Toastr.error("Das Ziel wurde nicht gefunden bzw. ist nicht eindeutig!");
 
         //Everything is OK
         else
@@ -96,6 +102,9 @@ export const NavSlider = {
     },
 
     onInputChange: function (event: JQuery.Event) {
+        //Stop event Propagation
+        event.stopPropagation();
+
         //Get element
         const target = $(event.target);
 

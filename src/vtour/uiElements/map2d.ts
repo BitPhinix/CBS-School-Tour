@@ -48,8 +48,5 @@ export const Map2d  = {
 
     navigate: function (start: string, destination: string) {
 
-        const startNmbr = AutoComplete.getRoomNumber(start);
-        const destNmbr = AutoComplete.getRoomNumber(destination);
-
     }
 };

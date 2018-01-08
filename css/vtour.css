@@ -190,8 +190,17 @@ body, html {
 }
 
 #autoCompleteContainerNav li {
+    height: 40px;
+    min-height: 40px !important;
+    padding: 4px 0 0 0;
     margin: 0;
-    padding: 4px 0;
+}
+
+#autoCompleteContainerNav {
+    max-height: calc(100% - 170px) !important;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    min-width: 300px;
 }
 
 #navHeader .inputWrapper {

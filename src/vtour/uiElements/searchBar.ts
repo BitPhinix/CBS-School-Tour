@@ -24,20 +24,23 @@ export const SearchBar = {
     },
 
     onFindButtonClick: function () {
-        const results = AutoComplete.getResults(this.Input.val());
+        //Try to find the room
+        const result = AutoComplete.searchRoomLocation(this.Input.val());
 
-        if(results.length == 1)
-            //TODO: Zoom to element
-            return;
-        else if(results.length == 0)
-            Toastr.error("Keine passenden Räume wurden gefunden !");
+        //Location was not found
+        if(!result)
+            Toastr.error("Eingabe ist nicht eindeutig!");
         else
-            Toastr.error("Es wurden keine eindeutigen Suchergebnisse gefunden !");
+            //Todo Zoom to Location
+            return;
     },
 
     onInputChange(event: JQuery.Event) {
         //Get element
         const target = $(event.target);
+
+        //Stop event Propagation
+        event.stopPropagation();
 
         //Update AutoCompleteContainer
         this.AutoCompleteContainer.update(target.val());
