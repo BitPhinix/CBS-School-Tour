@@ -2,6 +2,8 @@
 import {AutoCompleteContainer} from "../Components/autoCompleteContainer";
 import {AutoComplete} from "../Components/autoComplete";
 
+import Toastr = require("toastr");
+
 export var SearchBar = {
     Input: $("#searchBox"),
     FindButton: $("#findElement"),
@@ -23,6 +25,15 @@ export var SearchBar = {
 
     onFindButtonClick: function () {
         //Todo Zoom to element
+        const results = AutoComplete.getResults(this.Input.val());
+
+        if(results.length == 1)
+            //TODO: Zoom to element
+            return;
+        else if(results.length == 0)
+            Toastr.error("Keine passenden Räume wurden gefunden !");
+        else
+            Toastr.error("Es wurden keine eindeutigen Suchergebnisse gefunden !");
     },
 
     onInputChange(event: JQuery.Event) {

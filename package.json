@@ -14,10 +14,12 @@
   "license": "ISC",
   "dependencies": {
     "@types/jquery": "^3.2.16",
+    "@types/toastr": "^2.1.35",
     "jquery": "^3.2.1",
     "marzipano": "^0.6.0",
     "mdbootstrap": "^4.4.3",
-    "svg-pan-zoom": "^3.5.3"
+    "svg-pan-zoom": "^3.5.3",
+    "toastr": "^2.1.4"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.4.1",

@@ -233,7 +233,7 @@ body, html {
     border-bottom: 1px solid gray;
 }
 
-#floorSelector div:hover {
+#floorSelector div.clicked {
     background-color: lightgray;
 }
 
@@ -263,8 +263,8 @@ body, html {
 #Map2D {
     background-color: whitesmoke;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 110%;
+    height: 110%;
     top: 0;
     left: 0;
 }

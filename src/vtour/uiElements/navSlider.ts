@@ -1,4 +1,5 @@
 ///<reference path="../../../node_modules/@types/jquery/index.d.ts"/>
+import {SearchBar} from "./searchBar";
 import {AutoCompleteContainer} from "../Components/autoCompleteContainer";
 import {AutoComplete} from "../Components/autoComplete";
 
@@ -38,11 +39,11 @@ export var NavSlider = {
         //Set value of SearchInput
         this.SearchInput.val(target.val());
 
-        //Fire update event
-        this.SearchInput.trigger("input");
-
         //Close navBar
         this.onToggleClick();
+
+        //Search for element
+        SearchBar.onFindButtonClick();
 
         //TODO: Zoom To Room
     },
