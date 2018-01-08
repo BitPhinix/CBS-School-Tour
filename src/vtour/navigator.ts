@@ -8,16 +8,23 @@ interface CostList {
 
 export const Navigator = {
 
-    navigateGlobal: function (start: RoomLocation, end: RoomLocation) {
+    navigateGlobal: function (start: RoomLocation, end: RoomLocation): Point[] {
+        const result = this.navigateFloor(start.id, end.id, 1);
 
+        const path: Point[] = [];
+
+        for (let node of result)
+            path.push(NavData.floors[1][node].location);
+
+        return path;
     },
 
     navigateFloor: function (start: number, end: number, floorId: number) {
         //Get graph
-        const graph = this.getGraph(NavData.floors[floorId]);
+        const graph = this.getGraph(NavData.floors[floorId.toString()]);
 
         //Get result
-        const result = graph.path(start.toString(), end.toString());
+        return graph.path(start.toString(), end.toString());
     },
 
     getGraph: function(floor: Floor) {

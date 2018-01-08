@@ -2,7 +2,7 @@
 import {SearchBar} from "./searchBar";
 import {AutoCompleteContainer} from "../Components/autoCompleteContainer";
 import {AutoComplete} from "../Components/autoComplete";
-import {Navigator} from "../navigator";
+import {Map2d} from "./map2d";
 import Toastr = require("toastr");
 
 export const NavSlider = {
@@ -58,9 +58,11 @@ export const NavSlider = {
             Toastr.error("Das Ziel wurde nicht gefunden bzw. ist nicht eindeutig!");
 
         //Everything is OK
-        else
-            console.log(Navigator.navigateFloor(startLocation.id, destLocation.id, startLocation.floor));
-            return;
+        else {
+            Map2d.navigate(startLocation, destLocation);
+            this.onToggleClick();
+        }
+
     },
 
     onSearchIconClick: function (event: JQuery.Event) {

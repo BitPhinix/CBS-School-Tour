@@ -1,14 +1,15 @@
 /// <reference path="../../../node_modules/@types/jquery/index.d.ts"/>
 import SvgJs = require("svg.js");
+import {RoomLocation} from "../Components/autoComplete";
+import {Navigator} from "../navigator";
 
 export const Map2d  = {
     SvgContainer: $("#Map2dContainer"),
     SvgElement: undefined,
     SvgPanZoom: undefined,
+    DrawContainer: undefined,
 
     init: function() {
-        //this.loadSvg("./svg/1 OG.svg");
-        this.draw();
         this.loadFloor(1);
     },
 
@@ -32,14 +33,26 @@ export const Map2d  = {
             svgElement.svg($tmp.html());
         }, 'xml');
 
+        this.DrawContainer = svgElement.group();
         this.SvgElement = svgElement;
     },
 
-    lookTo: function(floorId: number, x: number, y: number) {
+    navigate: function (start: RoomLocation, end: RoomLocation) {
+        const result = Navigator.navigateGlobal(start, end);
 
+        for (let i = 1; i < result.length; i++)
+            this.drawLine(result[i - 1], result[i]);
     },
 
-    draw: function () {
+    lookTo: function(floorId: number, x: number, y: number) {
+        //Show corresponding floor
+        this.SvgPanZoom.reset();
 
+        let sizes = this.SvgPanZoom.getSizes();
+        this.SvgPanZoom.zoomAtPoint(4,{x: x * ((sizes.width - sizes.viewBox.x)  / sizes.viewBox.width), y: y *  ((sizes.height - sizes.viewBox.y) / sizes.viewBox.height) }).delay(800);
+    },
+
+    drawLine: function (x: Point, y: Point) {
+        this.DrawContainer.line(x.x, x.y, y.x, y.y).stroke({ width: 10, color: "rgb(255, 0, 0)" });
     },
 };
