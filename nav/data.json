@@ -3,7 +3,6 @@
     "1": {
       "0": {
         "description": "WC",
-        "number": null,
         "connectedTo": [
           140,
           143
@@ -15,7 +14,7 @@
       },
       "1": {
         "description": "Schlüsselpunkt",
-        "number": null,
+        "hidden": true,
         "connectedTo": [
           101,
           105
@@ -27,7 +26,7 @@
       },
       "2": {
         "description": "Schlüsselpunkt",
-        "number": null,
+        "hidden": true,
         "connectedTo": [
           104,
           131,
@@ -40,7 +39,7 @@
       },
       "3": {
         "description": "Schlüsselpunkt",
-        "number": null,
+        "hidden": true,
         "connectedTo": [
           106,
           117
@@ -52,7 +51,7 @@
       },
       "4": {
         "description": "Schlüsselpunkt",
-        "number": null,
+        "hidden": true,
         "connectedTo": [
           128,
           140,
@@ -65,10 +64,10 @@
       },
       "5": {
         "description": "Schlüsselpunkt",
-        "number": null,
+        "hidden": true,
         "connectedTo": [
-          5,
-          150,
+          6,
+          154,
           142
         ],
         "location": {
@@ -78,10 +77,11 @@
       },
       "6": {
         "description": "Schlüsselpunkt",
-        "number": null,
+        "hidden": true,
         "connectedTo": [
-          165,
-          167
+          5,
+          143,
+          159
         ],
         "location": {
           "x": 640,
@@ -90,7 +90,7 @@
       },
       "7": {
         "description": "Schlüsselpunkt",
-        "number": null,
+        "hidden": true,
         "connectedTo": [
           167,
           165
@@ -404,7 +404,8 @@
         "number": 165,
         "connectedTo": [
           7,
-          166
+          166,
+          162
         ],
         "location": {
           "x": 880,

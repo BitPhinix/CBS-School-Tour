@@ -25,7 +25,7 @@ export const AutoComplete = {
                 let room = floor[key];
 
                 //If room description includes text or room number start with number
-                if (room.description && (room.description.toLowerCase().includes(input) || number && room.number && room.number.toString().startsWith(number))) {
+                if (!room.hidden && room.description && (room.description.toLowerCase().includes(input) || number && room.number && room.number.toString().startsWith(number))) {
                     //Desc = description
                     let desc = room.description;
 
