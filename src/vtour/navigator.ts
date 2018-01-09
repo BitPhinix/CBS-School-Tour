@@ -11,11 +11,12 @@ export const Navigator = {
     navigateGlobal: function (start: RoomLocation, end: RoomLocation): Point[] {
         //TODO: Make global, comment
         const result = this.navigateFloor(start.id, end.id, 1);
-
         const path: Point[] = [];
 
         for (let node of result)
             path.push(NavData.floors[1][node].location);
+
+        console.log(path);
 
         return path;
     },
@@ -40,9 +41,11 @@ export const Navigator = {
             let map = new Map();
 
             //For each connected node
-            for (let node of room.connectedTo)
+            for (let node of room.connectedTo) {
+                console.log(node);
                 //Calc costs and add to map
-                map.set(node.toString(), this.getCost(room.location, floor[node].location));
+                map.set(node.toString(), this.getCost(room.location, floor[node.toString()].location));
+            }
 
             //Add map to graph
             graph.set(key.toString(), map);

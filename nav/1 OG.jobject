@@ -1,283 +1,282 @@
-http://www.objgen.com/json/models/CNF1
-
 floors
-  1[0]
-    description s = WC
-    number n = x
-    connectedTo[] n = 140, 143
-    location
-      x n = 430
-      y n = 310
-  1[1]
-    description s = Schlüsselpunkt
-    number n = x
-    connectedTo[] n = 101, 105
-    location
-      x n = 96
-      y n = 119
-  1[2]
-    description s = Schlüsselpunkt
-    number n = x
-    connectedTo[] n = 104, 131, 4
-    location
-      x n = 327
-      y n = 119
-  1[3]
-    description s = Schlüsselpunkt
-    number n = x
-    connectedTo[] n = 106, 117
-    location
-      x n = 96
-      y n = 310
-  1[4]
-    description s = Schlüsselpunkt
-    number n = x
-    connectedTo[] n = 128, 140, 2
-    location
-      x n = 327
-      y n = 310
-  1[5]
-    description s = Schlüsselpunkt
-    number n = x
-    connectedTo[] n = 5, 150, links
-    location
-      x n = 640
-      y n = 119
-  1[6]
-    description s = Schlüsselpunkt
-    number n = x
-    connectedTo[] n = 165, 167
-    location
-      x n = 640
-      y n = 310
-  1[7]
-    description s = Schlüsselpunkt
-    number n = x
-    connectedTo[] n = 34, 36, 37
-    location
-      x n = 917
-      y n = 499
-  1[101]
-    description s = Klassenzimmer
-    number n = 101
-    connectedTo[] n = 1, 102
-    location
-      x n = 125
-      y n = 119
-  1[102]
-    description s = Klassenzimmer
-    number n = 102
-    connectedTo[] n = 101, 103
-    location
-      x n = 181
-      y n = 119
-  1[103]
-    description s = Klassenzimmer
-    number n = 103
-    connectedTo[] n = 102, 111
-    location
-      x n = 241
-      y n = 119
-  1[104]
-    description s = Klassenzimmer
-    number n = 104
-    connectedTo[] n = 111, 2
-    location
-      x n = 297
-      y n = 119
-  1[105]
-    description s = Klassenzimmer
-    number n = 105
-    connectedTo[] n = 1, 106
-    location
-      x n = 96
-      y n = 140
-  1[111]
-    description s = Computerraum
-    number n = 111
-    connectedTo[] n = 103, 104
-    location
-      x n = 257
-      y n = 119
-  1[106]
-    description s = Klassenarbeitsraum
-    number n = 106
-    connectedTo[] n = 105, 3
-    location
-      x n = 96
-      y n = 184
-  1[117]
-    description s = Lehrerzimmer
-    number n = 117
-    connectedTo[] n = 3, 126
-    location
-      x n = 180
-      y n = 310
-  1[126]
-    description s = Direktorat
-    number n = 126
-    connectedTo[] n = 117, 128
-    location
-      x n = 239
-      y n = 310
-  1[128]
-    description s = Sekretariat
-    number n = 128
-    connectedTo[] n = 126, 4
-    location
-      x n = 273
-      y n = 310
-  1[131]
-    description s = Physikraum
-    number n = 131
-    connectedTo[] n = 2, 136
-    location
-      x n = 398
-      y n = 119
-  1[136]
-    description s = Physikraum
-    number n = 136
-    connectedTo[] n = 131, 137
-    location
-      x n = 465
-      y n = 119
-  1[137]
-    description s = Physikraum
-    number n = 137
-    connectedTo[] n = 136, 138
-    location
-      x n = 513
-      y n = 119
-  1[138]
-    description s = Physikraum
-    number n = 138
-    connectedTo[] n = 137, 142
-    location
-      x n = 573
-      y n = 119
-  1[140]
-    description s = Computerraum
-    number n = 140
-    connectedTo[] n = 4, 200
-    location
-      x n = 385
-      y n = 310
-  1[142]
-    description s = Physikraum
-    number n = 142
-    connectedTo[] n = 138, 5
-    location
-      x n = 573
-      y n = 119
-  1[143]
-    description s = Computerraum
-    number n = 143
-    connectedTo[] n = 0, 6
-    location
-      x n = 612
-      y n = 310
-  1[150]
-    description s = Klassenzimmer
-    number n = 150
-    connectedTo[] n = 154, 151
-    location
-      x n = 733
-      y n = 119
-  1[151]
-    description s = Klassenzimmer
-    number n = 151
-    connectedTo[] n = 150, 152
-    location
-      x n = 796
-      y n = 119
-  1[152]
-    description s = Klassenzimmer
-    number n = 152
-    connectedTo[] n = 151, 153
-    location
-      x n = 860
-      y n = 119
-  1[153]
-    description s = Klassenzimmer
-    number n = 153
-    connectedTo[] n = 152, 172
-    location
-      x n = 917
-      y n = 119
-  1[154]
-    description s = Klassenarbeitsraum
-    number n = 154
-    connectedTo[] n = 5, 150
-    location
-      x n = 699
-      y n = 119
-  1[159]
-    description s = Computerraum
-    number n = 159
-    connectedTo[] n = 6, 170
-    location
-      x n = 695
-      y n = 310
-  1[162]
-    description s = Klassenzimmer
-    number n = 162
-    connectedTo[] n = 164, 165
-    location
-      x n = 855
-      y n = 499
-  1[164]
-    description s = Klassenzimmer
-    number n = 164
-    connectedTo[] = 162
-    location
-      x n = 847
-      y n = 499
-  1[165]
-    description s = Klassenzimmer
-    number n = 165
-    connectedTo[] n = 7, 166
-    location
-      x n = 880
-      y n = 499
-  1[166]
-    description s = Computerraum
-    number n = 166
-    connectedTo[] n = 165
-    location
-      x n = 880
-      y n = 499
-  1[167]
-    description s = Computerraum
-    number n = 167
-    connectedTo[] n = 169, 7
-    location
-      x n = 917
-      y n = 457
-  1[169]
-    description s = Klassenzimmer
-    number n = 169
-    connectedTo[] n = 170, 167
-    location
-      x n = 917
-      y n = 370
-  1[170]
-    description s = Klassenzimmer
-    number n = 170
-    connectedTo[] n = 159, 171, 169
-    location
-      x n = 917
-      y n = 310
-  1[171]
-    description s = Klassenzimmer
-    number n = 171
-    connectedTo[] n = 172, 170
-    location
-      x n = 917
-      y n = 239
-  1[172]
-    description s = Klassenzimmer
-    number n = 172
-    connectedTo[] n = 153, 171
-    location
-      x n = 917
-      y n = 166
+  1
+    0
+      description s = WC
+      number n = x
+      connectedTo[] n = 140, 143
+      location
+        x n = 430
+        y n = 310
+    1
+      description s = Schlüsselpunkt
+      number n = x
+      connectedTo[] n = 101, 105
+      location
+        x n = 96
+        y n = 119
+    2
+      description s = Schlüsselpunkt
+      number n = x
+      connectedTo[] n = 104, 131, 4
+      location
+        x n = 327
+        y n = 119
+    3
+      description s = Schlüsselpunkt
+      number n = x
+      connectedTo[] n = 106, 117
+      location
+        x n = 96
+        y n = 310
+    4
+      description s = Schlüsselpunkt
+      number n = x
+      connectedTo[] n = 128, 140, 2
+      location
+        x n = 327
+        y n = 310
+    5
+      description s = Schlüsselpunkt
+      number n = x
+      connectedTo[] n = 5, 150, links
+      location
+        x n = 640
+        y n = 119
+    6
+      description s = Schlüsselpunkt
+      number n = x
+      connectedTo[] n = 165, 167
+      location
+        x n = 640
+        y n = 310
+    7
+      description s = Schlüsselpunkt
+      number n = x
+      connectedTo[] n = 34, 36, 37
+      location
+        x n = 917
+        y n = 499
+    101
+      description s = Klassenzimmer
+      number n = 101
+      connectedTo[] n = 1, 102
+      location
+        x n = 125
+        y n = 119
+    102
+      description s = Klassenzimmer
+      number n = 102
+      connectedTo[] n = 101, 103
+      location
+        x n = 181
+        y n = 119
+    103
+      description s = Klassenzimmer
+      number n = 103
+      connectedTo[] n = 102, 111
+      location
+        x n = 241
+        y n = 119
+    104
+      description s = Klassenzimmer
+      number n = 104
+      connectedTo[] n = 111, 2
+      location
+        x n = 297
+        y n = 119
+    105
+      description s = Klassenzimmer
+      number n = 105
+      connectedTo[] n = 1, 106
+      location
+        x n = 96
+        y n = 140
+    111
+      description s = Computerraum
+      number n = 111
+      connectedTo[] n = 103, 104
+      location
+        x n = 257
+        y n = 119
+    106
+      description s = Klassenarbeitsraum
+      number n = 106
+      connectedTo[] n = 105, 3
+      location
+        x n = 96
+        y n = 184
+    117
+      description s = Lehrerzimmer
+      number n = 117
+      connectedTo[] n = 3, 126
+      location
+        x n = 180
+        y n = 310
+    126
+      description s = Direktorat
+      number n = 126
+      connectedTo[] n = 117, 128
+      location
+        x n = 239
+        y n = 310
+    128
+      description s = Sekretariat
+      number n = 128
+      connectedTo[] n = 126, 4
+      location
+        x n = 273
+        y n = 310
+    131
+      description s = Physikraum
+      number n = 131
+      connectedTo[] n = 2, 136
+      location
+        x n = 398
+        y n = 119
+    136
+      description s = Physikraum
+      number n = 136
+      connectedTo[] n = 131, 137
+      location
+        x n = 465
+        y n = 119
+    137
+      description s = Physikraum
+      number n = 137
+      connectedTo[] n = 136, 138
+      location
+        x n = 513
+        y n = 119
+    138
+      description s = Physikraum
+      number n = 138
+      connectedTo[] n = 137, 142
+      location
+        x n = 573
+        y n = 119
+    140
+      description s = Computerraum
+      number n = 140
+      connectedTo[] n = 4, 200
+      location
+        x n = 385
+        y n = 310
+    142
+      description s = Physikraum
+      number n = 142
+      connectedTo[] n = 138, 5
+      location
+        x n = 573
+        y n = 119
+    143
+      description s = Computerraum
+      number n = 143
+      connectedTo[] n = 0, 6
+      location
+        x n = 612
+        y n = 310
+    150
+      description s = Klassenzimmer
+      number n = 150
+      connectedTo[] n = 154, 151
+      location
+        x n = 733
+        y n = 119
+    151
+      description s = Klassenzimmer
+      number n = 151
+      connectedTo[] n = 150, 152
+      location
+        x n = 796
+        y n = 119
+    152
+      description s = Klassenzimmer
+      number n = 152
+      connectedTo[] n = 151, 153
+      location
+        x n = 860
+        y n = 119
+    153
+      description s = Klassenzimmer
+      number n = 153
+      connectedTo[] n = 152, 172
+      location
+        x n = 917
+        y n = 119
+    154
+      description s = Klassenarbeitsraum
+      number n = 154
+      connectedTo[] n = 5, 150
+      location
+        x n = 699
+        y n = 119
+    159
+      description s = Computerraum
+      number n = 159
+      connectedTo[] n = 6, 170
+      location
+        x n = 695
+        y n = 310
+    162
+      description s = Klassenzimmer
+      number n = 162
+      connectedTo[] n = 164, 165
+      location
+        x n = 855
+        y n = 499
+    164
+      description s = Klassenzimmer
+      number n = 164
+      connectedTo[] = 162
+      location
+        x n = 847
+        y n = 499
+    165
+      description s = Klassenzimmer
+      number n = 165
+      connectedTo[] n = 7, 166
+      location
+        x n = 880
+        y n = 499
+    166
+      description s = Computerraum
+      number n = 166
+      connectedTo[] n = 165
+      location
+        x n = 880
+        y n = 499
+    167
+      description s = Computerraum
+      number n = 167
+      connectedTo[] n = 169, 7
+      location
+        x n = 917
+        y n = 457
+    169
+      description s = Klassenzimmer
+      number n = 169
+      connectedTo[] n = 170, 167
+      location
+        x n = 917
+        y n = 370
+    170
+      description s = Klassenzimmer
+      number n = 170
+      connectedTo[] n = 159, 171, 169
+      location
+        x n = 917
+        y n = 310
+    171
+      description s = Klassenzimmer
+      number n = 171
+      connectedTo[] n = 172, 170
+      location
+        x n = 917
+        y n = 239
+    172
+      description s = Klassenzimmer
+      number n = 172
+      connectedTo[] n = 153, 171
+      location
+        x n = 917
+        y n = 166

@@ -17,7 +17,7 @@ export const AutoComplete = {
         const result: string[] = [];
 
         //For each floor
-        for (let floorId in NavData.floors) {
+        for (let floorId of Object.keys(NavData.floors)) {
             let floor = NavData.floors[floorId];
 
             //For each room in the floor
@@ -25,9 +25,18 @@ export const AutoComplete = {
                 let room = floor[key];
 
                 //If room description includes text or room number start with number
-                if (room.number && room.description && (room.description.toLowerCase().includes(input) || number && room.number.toString().startsWith(number)))
-                    //Add to room to result array
-                    result.push(room.description + " " + room.number);
+                if (room.description && (room.description.toLowerCase().includes(input) || number && room.number && room.number.toString().startsWith(number))) {
+                    //Desc = description
+                    let desc = room.description;
+
+                    //If room has a number
+                    if(room.number)
+                        //Add it to end of the desc
+                        desc += " " + room.number;
+
+                    ///Add desc to result array
+                    result.push(desc);
+                }
             }
         }
 
