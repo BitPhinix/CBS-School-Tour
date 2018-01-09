@@ -9,6 +9,7 @@ export const Map2d  = {
     SvgElement: undefined,
     SvgPanZoom: undefined,
     Overlay: undefined,
+    HammerJs: undefined,
     Ready: false,
 
     init: function() {
@@ -89,7 +90,7 @@ export const Map2d  = {
             preventMouseEventsDefault: true,
             zoomScaleSensitivity: 0.2,
             minZoom: 0.5,
-            maxZoom: 3,
+            maxZoom: 4,
             fit: false,
             contain: false,
             center: false,
@@ -105,16 +106,12 @@ export const Map2d  = {
     },
 
     lookTo: function(floorId: number, x: number, y: number) {
-        //TODO: floor change
+        this.SvgPanZoom.reset().zoom(1);
 
-        //Reset Zoom
-        this.SvgPanZoom.reset();
+        const size = this.SvgPanZoom.getSizes();
 
-        //Get element size
-        let sizes = this.SvgPanZoom.getSizes();
-
-        //Brainfuck, should work on some monitors XD
-        this.SvgPanZoom.zoomAtPoint(4,{x: x * ((sizes.width - sizes.viewBox.x)  / sizes.viewBox.width), y: y *  ((sizes.height - sizes.viewBox.y) / sizes.viewBox.height) }).delay(800);
+        this.SvgPanZoom.pan({x: size.viewBox.width - x, y: size.viewBox.height - y});
+        this.SvgPanZoom.zoomBy(4);
     },
 
     drawLine: function (x: Point, y: Point, width: number, color: string, container: SvgJs.G) {

@@ -41,6 +41,11 @@ export const NavSlider = {
         if(event.keyCode !== 13)
             return;
 
+        //Start navigation
+        this.startNaviagtion(true);
+    },
+
+    startNaviagtion: function(showError: boolean) {
         //Try to get the start location
         const startLocation = AutoComplete.searchRoomLocation(this.StartInput.val());
 
@@ -48,21 +53,24 @@ export const NavSlider = {
         const destLocation = AutoComplete.searchRoomLocation(this.DestinationInput.val());
 
         //Start-Location was not found
-        if(!startLocation)
+        if(!startLocation) {
+            if(showError)
             //Alert
             Toastr.error("Der Start wurde nicht gefunden bzw. ist nicht eindeutig!");
+        }
 
         //Destination-Location was not found
-        else if(!destLocation)
-        //Alert
+        else if(!destLocation) {
+            if(showError)
+            //Alert
             Toastr.error("Das Ziel wurde nicht gefunden bzw. ist nicht eindeutig!");
+        }
 
         //Everything is OK
         else {
             Map2d.navigate(startLocation, destLocation);
             this.onToggleClick();
         }
-
     },
 
     onSearchIconClick: function (event: JQuery.Event) {
@@ -85,6 +93,9 @@ export const NavSlider = {
 
         //Fire update event
         this.ActiveInput.trigger("input");
+
+        //Navigate if possible
+        this.startNaviagtion(false);
     },
 
     onToggleClick: function() {

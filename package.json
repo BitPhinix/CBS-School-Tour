@@ -13,8 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/hammerjs": "^2.0.35",
     "@types/jquery": "^3.2.16",
     "@types/toastr": "^2.1.35",
+    "hammerjs": "^2.0.8",
     "jquery": "^3.2.1",
     "marzipano": "^0.6.0",
     "mdbootstrap": "^4.4.3",

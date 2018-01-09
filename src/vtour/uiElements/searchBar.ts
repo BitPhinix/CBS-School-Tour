@@ -15,6 +15,7 @@ export const SearchBar = {
         this.AutoCompleteContainer.OnRecommendationClickEvent.push((value) => this.onRecommendationClick(value));
         this.Input.on("input", (event) => this.onInputChange(event));
         this.Input.click((event) => this.onInputChange(event));
+        this.Input.keyup((event) => this.onKeyUp(event));
         this.FindButton.click(() => this.onFindButtonClick());
         $(window).on("resize", () => this.onWindowResize());
     },
@@ -38,6 +39,15 @@ export const SearchBar = {
             //Look to location
             Map2d.lookTo(result.floor, location.x, location.y);
         }
+    },
+
+    onKeyUp: function (event: JQuery.Event) {
+        //Key isn´t Enter
+        if (event.keyCode !== 13)
+            return;
+
+        //Click find button
+        this.onFindButtonClick();
     },
 
     onInputChange(event: JQuery.Event) {
