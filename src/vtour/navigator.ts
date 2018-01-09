@@ -9,6 +9,7 @@ interface CostList {
 export const Navigator = {
 
     navigateGlobal: function (start: RoomLocation, end: RoomLocation): Point[] {
+        //TODO: Make global, comment
         const result = this.navigateFloor(start.id, end.id, 1);
 
         const path: Point[] = [];
