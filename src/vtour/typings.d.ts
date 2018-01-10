@@ -17,6 +17,7 @@ declare class ClassRoom {
     connectedTo: number[];
     location: Point;
     hidden: boolean;
+    leadTo: number;
 }
 
 declare class Point {
